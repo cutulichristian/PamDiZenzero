@@ -103,7 +103,7 @@ document.querySelector('#booking-form').addEventListener('submit', async e => {
   button.textContent = 'Invio in corso…';
   
   try {
-    const response = await fetch('https://formsubmit.co/ajax/pamdizenzero@gmail.com', {
+    const response = await fetch('https://formsubmit.co/ajax/info@pamdizenzero.it', {
       method: 'POST',
       headers: { Accept: 'application/json' },
       body: data
@@ -116,7 +116,7 @@ document.querySelector('#booking-form').addEventListener('submit', async e => {
     wishlist = [];
     drawWishlist();
   } catch {
-    status.textContent = 'Non riesco a inviare ora. Scrivici a pamdizenzero@gmail.com.';
+    status.textContent = 'Non riesco a inviare ora. Scrivici a info@pamdizenzero.it.';
   } finally {
     button.disabled = false;
     button.innerHTML = 'Invia la richiesta <span>→</span>';
