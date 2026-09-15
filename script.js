@@ -20,7 +20,6 @@ const products = [
   { id: 'portaovetti', name: 'Albero dell\'avvento', kind: 'Decorazione natalizia', price: '€ 10,00', amount: 10, image: 'assets/portaovetti.jpg' },
   { id: 'slittababboxl', name: 'Slitta di Babbo Natale', kind: 'Decorazione natalizia', price: '€ 18,00', amount: 18, image: 'assets/slittababboxl.jpg' },
   { id: 'strega', name: 'Strega in feltro', kind: 'Decorazione natalizia', price: '€ 13,00', amount: 13, image: 'assets/strega.jpg' },
-  { id: 'villaggiofeltro2', name: 'Villaggio in feltro', kind: 'Villaggio natalizio', price: '€ 10,00', amount: 10, image: 'assets/villaggiofeltro.jpg' },
   { id: 'villaggiofeltrolungo', name: 'Villaggio in feltro', kind: 'Villaggio natalizio', price: '€ 12,00', amount: 12, image: 'assets/villaggiofeltrolungo.jpg' },
   { id: 'villaggiotondorami', name: 'Villaggio natalizio', kind: 'Villaggio natalizio', price: '€ 12,00', amount: 12, image: 'assets/villaggiotondorami.jpg' }
 ];
