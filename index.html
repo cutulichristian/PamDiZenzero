@@ -83,6 +83,21 @@
         <button class="button button-dark request-summary-action" type="button">Chiudi <span>×</span></button>
       </div>
     </dialog>
+    <dialog id="product-preview" class="product-preview" aria-labelledby="preview-title">
+      <div class="product-preview-content">
+        <button class="product-preview-close" type="button" aria-label="Chiudi anteprima">×</button>
+        <img id="preview-image" src="" alt="" />
+        <div class="product-preview-details">
+          <p id="preview-kind" class="eyebrow"></p>
+          <h2 id="preview-title"></h2>
+          <p id="preview-price" class="preview-price"></p>
+          <div class="product-preview-actions">
+            <a id="preview-download" class="button" href="" download>Salva la foto <span>↓</span></a>
+            <a id="preview-email" class="preview-email" href="">Scrivi una mail su questo prodotto <span>↗</span></a>
+          </div>
+        </div>
+      </div>
+    </dialog>
     <footer><img src="assets/logo-pam-di-zenzero.png" alt="Pam di Zenzero" /><p>Creazioni fatte a mano con cura</p><p><a href="come-funziona.html">Come funziona</a> · <a href="cookie-policy.html">Cookie Policy</a> · <a href="privacy.html">Privacy Policy</a> · © <span id="year"></span> Pam di Zenzero</p></footer>
     <aside class="cookie-banner" id="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
       <h2 id="cookie-title">Preferenze cookie</h2>

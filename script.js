@@ -20,7 +20,7 @@ const grid = document.querySelector('#product-grid');
 function drawProducts() { 
   grid.innerHTML = products.map(p => `
     <article class="product-card">
-      <img src="${p.image}" alt="${p.name}">
+      <img class="product-image" src="${p.image}" alt="${p.name}" data-product-id="${p.id}" tabindex="0" role="button" aria-label="Apri ${p.name} in grande">
       <div class="product-info">
         <div>
           <h3>${p.name}</h3>
@@ -32,6 +32,47 @@ function drawProducts() {
     </article>
   `).join(''); 
 }
+
+const productPreview = document.querySelector('#product-preview');
+const previewImage = document.querySelector('#preview-image');
+const previewTitle = document.querySelector('#preview-title');
+const previewKind = document.querySelector('#preview-kind');
+const previewPrice = document.querySelector('#preview-price');
+const previewEmail = document.querySelector('#preview-email');
+const previewDownload = document.querySelector('#preview-download');
+
+function openProductPreview(product) {
+  previewImage.src = product.image;
+  previewImage.alt = product.name;
+  previewTitle.textContent = product.name;
+  previewKind.textContent = product.kind;
+  previewPrice.textContent = product.price;
+  previewDownload.href = product.image;
+  previewDownload.download = product.image.split('/').pop();
+    previewEmail.href = `mailto:info@pamdizenzero.it?subject=${encodeURIComponent(product.name)}&body=${encodeURIComponent(`Buongiorno, vorrei ricevere maggiori informazioni sul prodotto "${product.name}" (${product.kind}, ${product.price}).`)}`;
+  productPreview.showModal();
+}
+
+grid.addEventListener('click', e => {
+  const image = e.target.closest('.product-image');
+  if (!image) return;
+  const product = products.find(item => item.id === image.dataset.productId);
+  if (product) openProductPreview(product);
+});
+
+grid.addEventListener('keydown', e => {
+  if (!e.target.classList.contains('product-image') || !['Enter', ' '].includes(e.key)) return;
+  e.preventDefault();
+  const product = products.find(item => item.id === e.target.dataset.productId);
+  if (product) openProductPreview(product);
+});
+
+document.querySelectorAll('.product-preview-close, .product-preview-email').forEach(button => {
+  button.addEventListener('click', () => productPreview.close());
+});
+productPreview.addEventListener('click', e => {
+  if (e.target === productPreview) productPreview.close();
+});
 
 function drawWishlist() { 
   const list = document.querySelector('#wishlist-items'); 
