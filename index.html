@@ -57,6 +57,24 @@
         </div>
       </section>
     </main>
+    <dialog id="request-summary" class="request-summary" aria-labelledby="request-summary-title">
+      <div class="request-summary-content">
+        <button class="request-summary-close" type="button" aria-label="Chiudi riepilogo">×</button>
+        <p class="eyebrow">Richiesta ricevuta</p>
+        <h2 id="request-summary-title">Grazie, abbiamo ricevuto la tua richiesta.</h2>
+        <p>Ti risponderemo il più velocemente possibile dopo aver verificato disponibilità e dettagli.</p>
+        <div class="request-summary-section">
+          <h3>Articoli richiesti</h3>
+          <ul id="summary-items"></ul>
+          <p class="request-summary-total"><span>Totale indicativo</span><strong id="summary-total"></strong></p>
+        </div>
+        <div class="request-summary-section">
+          <h3>Dati comunicati</h3>
+          <dl id="summary-contact"></dl>
+        </div>
+        <button class="button button-dark request-summary-action" type="button">Chiudi <span>×</span></button>
+      </div>
+    </dialog>
     <footer><img src="assets/logo-pam-di-zenzero.png" alt="Pam di Zenzero" /><p>Creazioni fatte a mano con cura</p><p><a href="come-funziona.html">Come funziona</a> · <a href="cookie-policy.html">Cookie Policy</a> · <a href="privacy.html">Privacy Policy</a> · © <span id="year"></span> Pam di Zenzero</p></footer>
     <aside class="cookie-banner" id="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
       <h2 id="cookie-title">Preferenze cookie</h2>

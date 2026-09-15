@@ -98,6 +98,13 @@ document.querySelector('#booking-form').addEventListener('submit', async e => {
   }
   
   const data = new FormData(e.target);
+  const requestedItems = wishlist.map(id => products.find(p => p.id === id)).filter(Boolean);
+  const contactDetails = {
+    nome: data.get('nome'),
+    email: data.get('email'),
+    telefono: data.get('telefono'),
+    messaggio: data.get('messaggio')
+  };
   data.append('wishlist', wishlist.map(id => products.find(p => p.id === id)?.name).join(', '));
   data.append('_subject', 'Nuova richiesta dal sito Pam di Zenzero');
   data.append('_template', 'table');
@@ -119,12 +126,48 @@ document.querySelector('#booking-form').addEventListener('submit', async e => {
     e.target.reset();
     wishlist = [];
     drawWishlist();
+    showRequestSummary(requestedItems, contactDetails);
   } catch {
     status.textContent = 'Non riesco a inviare ora. Scrivici a info@pamdizenzero.it.';
   } finally {
     button.disabled = false;
     button.innerHTML = 'Invia la richiesta <span>→</span>';
   }
+});
+
+function showRequestSummary(items, contactDetails) {
+  const summary = document.querySelector('#request-summary');
+  const itemList = document.querySelector('#summary-items');
+  const total = items.reduce((sum, item) => sum + item.amount, 0);
+  const contactList = document.querySelector('#summary-contact');
+
+  itemList.replaceChildren(...items.map(item => {
+    const listItem = document.createElement('li');
+    listItem.innerHTML = `<span>${item.name}</span><strong>${item.price}</strong>`;
+    return listItem;
+  }));
+  document.querySelector('#summary-total').textContent = total.toLocaleString('it-IT', { style: 'currency', currency: 'EUR' });
+  contactList.replaceChildren(...[
+    ['Nome e cognome', contactDetails.nome],
+    ['Email', contactDetails.email],
+    ['Telefono', contactDetails.telefono || 'Non comunicato'],
+    ['Messaggio', contactDetails.messaggio || 'Nessun messaggio']
+  ].map(([label, value]) => {
+    const term = document.createElement('dt');
+    term.textContent = label;
+    const description = document.createElement('dd');
+    description.textContent = value;
+    return [term, description];
+  }).flat());
+  summary.showModal();
+}
+
+const requestSummary = document.querySelector('#request-summary');
+document.querySelectorAll('.request-summary-close, .request-summary-action').forEach(button => {
+  button.addEventListener('click', () => requestSummary.close());
+});
+requestSummary.addEventListener('click', e => {
+  if (e.target === requestSummary) requestSummary.close();
 });
 
 document.querySelector('.menu-toggle').addEventListener('click', e => {
