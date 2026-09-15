@@ -27,7 +27,9 @@ function drawProducts() {
           <p>${p.kind}</p>
           <p class="price">${p.price}</p>
         </div>
-        <button class="add" data-id="${p.id}" aria-label="Aggiungi ${p.name} alla wishlist">+</button>
+        <div class="wishlist-control" data-control-id="${p.id}">
+          <button class="add" data-id="${p.id}" aria-label="Aggiungi ${p.name} alla wishlist">+</button>
+        </div>
       </div>
     </article>
   `).join(''); 
@@ -108,25 +110,32 @@ function drawWishlist() {
       `).join('') 
     : '<p class="empty">La tua wishlist è ancora vuota.<br>Esplora le creazioni e aggiungi le tue preferite.</p>'; 
 
-  grid.querySelectorAll('.add').forEach(button => {
-    const product = products.find(item => item.id === button.dataset.id);
-    const isSelected = wishlist.includes(button.dataset.id);
-    button.textContent = isSelected ? '✓' : '+';
-    button.setAttribute('aria-label', `${isSelected ? 'Rimuovi' : 'Aggiungi'} ${product.name} ${isSelected ? 'dalla' : 'alla'} wishlist`);
+  grid.querySelectorAll('.wishlist-control').forEach(control => {
+    const product = products.find(item => item.id === control.dataset.controlId);
+    const isSelected = wishlist.includes(control.dataset.controlId);
+
+    control.innerHTML = isSelected
+      ? `<span class="add selected" role="img" aria-label="${product.name} nella wishlist">✓</span><button class="remove-from-wishlist" data-remove="${product.id}" aria-label="Elimina ${product.name} dalla wishlist">Elimina</button>`
+      : `<button class="add" data-id="${product.id}" aria-label="Aggiungi ${product.name} alla wishlist">+</button>`;
   });
     
   localStorage.setItem('pamWishlist', JSON.stringify(wishlist)); 
 }
 
 grid.addEventListener('click', e => {
-  const id = e.target.dataset.id;
+  const addButton = e.target.closest('.add');
+  const removeButton = e.target.closest('.remove-from-wishlist');
+  const id = addButton?.dataset.id;
+
+  if (removeButton) {
+    wishlist = wishlist.filter(itemId => itemId !== removeButton.dataset.remove);
+    drawWishlist();
+    return;
+  }
+
   if (!id) return;
 
-  if (wishlist.includes(id)) {
-    wishlist = wishlist.filter(itemId => itemId !== id);
-  } else {
-    wishlist.push(id);
-  }
+  if (!wishlist.includes(id)) wishlist.push(id);
 
   drawWishlist();
 });
