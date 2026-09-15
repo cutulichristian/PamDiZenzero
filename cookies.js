@@ -1,27 +1,55 @@
 const cookieConsentKey = 'pamCookieConsent';
 const cookieBanner = document.querySelector('#cookie-banner');
 
+function safeStorageGet(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function safeStorageSet(key, value) {
+  try {
+    localStorage.setItem(key, value);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function safeStorageRemove(key) {
+  try {
+    localStorage.removeItem(key);
+  } catch {
+    // ignore storage errors in restricted browsers
+  }
+}
+
 function hideCookieBanner() {
-  cookieBanner.hidden = true;
+  if (cookieBanner) cookieBanner.hidden = true;
 }
 
 function saveCookieConsent(value) {
-  localStorage.setItem(cookieConsentKey, value);
+  safeStorageSet(cookieConsentKey, value);
   hideCookieBanner();
 }
 
 if (cookieBanner) {
-  if (localStorage.getItem(cookieConsentKey)) {
+  if (safeStorageGet(cookieConsentKey)) {
     hideCookieBanner();
   }
 
-  cookieBanner.querySelector('[data-cookie-accept]').addEventListener('click', () => saveCookieConsent('accepted'));
-  cookieBanner.querySelector('[data-cookie-reject]').addEventListener('click', () => saveCookieConsent('rejected'));
+  const acceptButton = cookieBanner.querySelector('[data-cookie-accept]');
+  const rejectButton = cookieBanner.querySelector('[data-cookie-reject]');
+
+  if (acceptButton) acceptButton.addEventListener('click', () => saveCookieConsent('accepted'));
+  if (rejectButton) rejectButton.addEventListener('click', () => saveCookieConsent('rejected'));
 }
 
-document.querySelectorAll('[data-cookie-reset]').forEach(button => {
+document.querySelectorAll('[data-cookie-reset]').forEach((button) => {
   button.addEventListener('click', () => {
-    localStorage.removeItem(cookieConsentKey);
+    safeStorageRemove(cookieConsentKey);
     if (cookieBanner) cookieBanner.hidden = false;
   });
 });
