@@ -17,7 +17,7 @@
       <a class="brand" href="#home" aria-label="Pam di Zenzero, torna alla home"><img src="assets/logo-pam-di-zenzero.png" alt="Pam di Zenzero" /></a>
       <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false">☰</button>
       <nav id="main-nav">
-        <a href="#galleria">Creazioni</a><a href="#storia">L'atelier</a><a href="#contatti">Contatti</a><a href="#dove-trovarci">Dove trovarci</a>
+        <a href="#galleria">Creazioni</a><a href="#storia">L'atelier</a><a href="#contatti">Contatti</a><a href="#dove-trovarci">Dove trovarci</a><a href="come-funziona.html">Come funziona</a>
       </nav>
       <a class="wish-link" href="#wishlist">Wishlist <span id="wish-count">0</span></a>
     </header>
@@ -35,7 +35,7 @@
 
       <section class="story" id="storia"><div class="story-image"><img src="https://images.unsplash.com/photo-1482517967863-00e15c9b44be?auto=format&fit=crop&w=1000&q=85" alt="Angolo caldo di un atelier natalizio" /></div><div class="story-copy"><p class="eyebrow">Dietro Pam di Zenzero</p><h2>Un Natale che<br /><em>sa di casa.</em></h2><p>Pam di Zenzero nasce dalla voglia di preparare cose belle, una alla volta, per le feste.</p><p>Ogni creazione è fatta con tempo, attenzione e materiali scelti con cura.</p></div></section>
 
-      <section class="wishlist section" id="wishlist"><div class="section-heading"><div><p class="eyebrow">La tua selezione</p><h2>Wishlist</h2></div><p>Aggiungi le creazioni che ami e invia una richiesta di prenotazione all'atelier.</p></div><div class="wishlist-layout"><div class="wishlist-card"><div id="wishlist-items" class="wishlist-items"><p class="empty">La tua wishlist è ancora vuota.<br />Esplora le creazioni e aggiungi le tue preferite.</p></div><div class="wishlist-total"><span>Pezzi selezionati</span><strong id="total-items">0</strong></div></div><form id="booking-form" class="booking-form"><h3>Richiedi la prenotazione</h3><p>Ti risponderemo per confermare disponibilità e dettagli.</p><label>Nome e cognome<input required name="nome" autocomplete="name" placeholder="Il tuo nome" /></label><label>Email<input required type="email" name="email" autocomplete="email" placeholder="nome@email.it" /></label><label>Telefono <small>(facoltativo)</small><input name="telefono" type="tel" autocomplete="tel" placeholder="Il tuo numero" /></label><label>Un messaggio <small>(facoltativo)</small><textarea name="messaggio" rows="3" placeholder="Per esempio: preferisco il ritiro in atelier..."></textarea></label><label class="privacy"><input required type="checkbox" name="privacy" /> <span>Ho letto l'<a href="privacy.html" target="_blank" rel="noopener">Informativa sulla Privacy</a> e acconsento al trattamento dei miei dati per rispondere a questa richiesta.</span></label><button class="button button-dark" type="submit">Invia la richiesta <span>→</span></button><p id="form-status" class="form-status" role="status"></p></form></div></section>
+      <section class="wishlist section" id="wishlist"><div class="section-heading"><div><p class="eyebrow">La tua selezione</p><h2>Wishlist</h2></div><p>Aggiungi le creazioni che ami e invia una richiesta di prenotazione all'atelier.</p></div><div class="wishlist-layout"><div class="wishlist-card"><div id="wishlist-items" class="wishlist-items"><p class="empty">La tua wishlist è ancora vuota.<br />Esplora le creazioni e aggiungi le tue preferite.</p></div><div class="wishlist-total"><span>Pezzi selezionati</span><strong id="total-items">0</strong></div></div><form id="booking-form" class="booking-form"><h3>Richiedi la prenotazione</h3><p>Ti risponderemo per confermare disponibilità e dettagli.</p><a class="booking-how" href="come-funziona.html">Come funziona la prenotazione <span>→</span></a><label>Nome e cognome<input required name="nome" autocomplete="name" placeholder="Il tuo nome" /></label><label>Email<input required type="email" name="email" autocomplete="email" placeholder="nome@email.it" /></label><label>Telefono <small>(facoltativo)</small><input name="telefono" type="tel" autocomplete="tel" placeholder="Il tuo numero" /></label><label>Un messaggio <small>(facoltativo)</small><textarea name="messaggio" rows="3" placeholder="Per esempio: preferisco il ritiro in atelier..."></textarea></label><label class="privacy"><input required type="checkbox" name="privacy" /> <span>Ho letto l'<a href="privacy.html" target="_blank" rel="noopener">Informativa sulla Privacy</a> e acconsento al trattamento dei miei dati per rispondere a questa richiesta.</span></label><button class="button button-dark" type="submit">Invia la richiesta <span>→</span></button><p id="form-status" class="form-status" role="status"></p></form></div></section>
 
       <section class="contact-band" id="contatti"><p class="eyebrow">Contatti</p><h2>Per informazioni<br />scrivici pure!</h2><a href="mailto:info@pamdizenzero.it">info@pamdizenzero.it <span>↗</span></a></section>
       <section class="where section" id="dove-trovarci">
@@ -57,7 +57,13 @@
         </div>
       </section>
     </main>
-    <footer><img src="assets/logo-pam-di-zenzero.png" alt="Pam di Zenzero" /><p>Creazioni fatte a mano con cura</p><p><a href="privacy.html">Privacy Policy</a> · © <span id="year"></span> Pam di Zenzero</p></footer>
+    <footer><img src="assets/logo-pam-di-zenzero.png" alt="Pam di Zenzero" /><p>Creazioni fatte a mano con cura</p><p><a href="come-funziona.html">Come funziona</a> · <a href="cookie-policy.html">Cookie Policy</a> · <a href="privacy.html">Privacy Policy</a> · © <span id="year"></span> Pam di Zenzero</p></footer>
+    <aside class="cookie-banner" id="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
+      <h2 id="cookie-title">Preferenze cookie</h2>
+      <p id="cookie-description">Usiamo strumenti tecnici per far funzionare wishlist e sito. Alcuni servizi esterni, come Google Maps, possono usare propri cookie. <a href="cookie-policy.html">Leggi la Cookie Policy</a>.</p>
+      <div class="cookie-actions"><button class="cookie-accept" type="button" data-cookie-accept>Accetta</button><button class="cookie-reject" type="button" data-cookie-reject>Rifiuta</button></div>
+    </aside>
     <script src="script.js"></script>
+    <script src="cookies.js"></script>
   </body>
 </html>

@@ -4,7 +4,11 @@ const products = [
   { id: 'diamontPaintingBabboBase', name: 'Diamont Painting "Babbo Natale"', kind: 'Decorazione con base', price: '€ 14,00', amount: 14, image: 'assets/babbobase.jpg'},
   { id: 'diamontPaintingMulino', name: 'Diamont Painting "Mulino"', kind: 'Decorazione con base', price: '€ 14,00', amount: 14, image: 'assets/mulino.jpg'},
   { id: 'bigliettoRenna', name: 'Biglietto Diamont Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettorenna.jpg' },
-  { id: 'bigliettoSclaus', name: 'Biglietto Diamont Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettosclaus.jpg'}
+  { id: 'bigliettoSclaus', name: 'Biglietto Diamont Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettosclaus.jpg'},
+  { id: 'babboarco', name: 'Villaggio di Babbo Natale con arco', kind: 'Decorazione natalizia', price: '€ 35,00', amount: 35, image: 'assets/babboarco.jpg'},
+  { id: 'villaggiofeltro', name: 'Villaggio in feltro', kind: 'Decorazione natalizia', price: '€ 20,00', amount: 20, image: 'assets/villaggiofeltro.jpg'},
+  { id: 'lanternafeltro', name: 'Lanterna in feltro con lumino', kind: 'Decorazione natalizia', price: '€ 5,00', amount: 5, image: 'assets/lanternafeltro.jpg'},
+
 ];
  
 
@@ -103,7 +107,7 @@ document.querySelector('#booking-form').addEventListener('submit', async e => {
   button.textContent = 'Invio in corso…';
   
   try {
-    const response = await fetch('https://formsubmit.co/ajax/info@pamdizenzero.it', {
+    const response = await fetch('https://formsubmit.co/ajax/prenotazioni@pamdizenzero.it', {
       method: 'POST',
       headers: { Accept: 'application/json' },
       body: data
