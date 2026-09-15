@@ -8,6 +8,21 @@ const products = [
   { id: 'babboarco', name: 'Villaggio di Babbo Natale con arco', kind: 'Decorazione natalizia', price: '€ 35,00', amount: 35, image: 'assets/babboarco.jpg'},
   { id: 'villaggiofeltro', name: 'Villaggio in feltro', kind: 'Decorazione natalizia', price: '€ 20,00', amount: 20, image: 'assets/villaggiofeltro.jpg'},
   { id: 'lanternafeltro', name: 'Lanterna in feltro con lumino', kind: 'Decorazione natalizia', price: '€ 5,00', amount: 5, image: 'assets/lanternafeltro.jpg'},
+  { id: 'alberopeloso', name: 'Albero soffice illuminato', kind: 'Decorazione natalizia', price: '€ 5,00', amount: 5, image: 'assets/alberopeloso.jpg'},
+  { id: 'babbetto', name: 'Babbetto in feltro', kind: 'Decorazione natalizia', price: '€ 5,00', amount: 5, image: 'assets/babbetto.jpg'},
+  { id: 'candelababbo', name: 'Candela con Babbo Natale', kind: 'Candela natalizia', price: '€ 5,00', amount: 5, image: 'assets/candelababbo.jpg'},
+  { id: 'candelapupazzo', name: 'Candela con pupazzo', kind: 'Candela natalizia', price: '€ 5,00', amount: 5, image: 'assets/candelapupazzo.jpg'},
+  { id: 'cornice', name: 'Cornice natalizia - natività', kind: 'Decorazione natalizia', price: '€ 12,00', amount: 12, image: 'assets/cornice.jpg'},
+  { id: 'fuoriportaazzurros', name: 'Fuoriporta piccolo', kind: 'Fuoriporta natalizio', price: '€ 6,00', amount: 6, image: 'assets/fuoriportaazzurros.jpg'},
+  { id: 'fuoriportabiancos', name: 'Fuoriporta piccolo', kind: 'Fuoriporta natalizio', price: '€ 6,00', amount: 6, image: 'assets/fuoriportabiancos.jpg'},
+  { id: 'fuoriportarossoxl', name: 'Fuoriporta grande', kind: 'Fuoriporta natalizio', price: '€ 12,00', amount: 12, image: 'assets/fuoriportarossoxl.jpg'},
+  { id: 'fuoriportarossoxl2', name: 'Fuoriporta grande', kind: 'Fuoriporta natalizio', price: '€ 12,00', amount: 12, image: 'assets/fuoriportarossoxl2.jpg'},
+  { id: 'portaovetti', name: 'Albero dell\'avvento', kind: 'Decorazione natalizia', price: '€ 10,00', amount: 10, image: 'assets/portaovetti.jpg'},
+  { id: 'slittababboxl', name: 'Slitta di Babbo Natale', kind: 'Decorazione natalizia', price: '€ 18,00', amount: 18, image: 'assets/slittababboxl.jpg'},
+  { id: 'strega', name: 'Strega in feltro', kind: 'Decorazione natalizia', price: '€ 13,00', amount: 13, image: 'assets/strega.jpg'},
+  { id: 'villaggiodeltro', name: 'Villaggio in feltro', kind: 'Villaggio natalizio', price: '€ 10,00', amount: 10, image: 'assets/villaggiodeltro.jpg'},
+  { id: 'villaggiofeltrolungo', name: 'Villaggio in feltro', kind: 'Villaggio natalizio', price: '€ 12,00', amount: 12, image: 'assets/villaggiofeltrolungo.jpg'},
+  { id: 'villaggiotondorami', name: 'Villaggio natalizio', kind: 'Villaggio natalizio', price: '€ 12,00', amount: 12, image: 'assets/villaggiotondorami.jpg'},
 
 ];
  
@@ -25,10 +40,12 @@ function drawProducts() {
         <div>
           <h3>${p.name}</h3>
           <p>${p.kind}</p>
-          <p class="price">${p.price}</p>
         </div>
-        <div class="wishlist-control" data-control-id="${p.id}">
-          <button class="add" data-id="${p.id}" aria-label="Aggiungi ${p.name} alla wishlist">+</button>
+        <div class="product-footer">
+          <p class="price">${p.price}</p>
+          <div class="wishlist-control" data-control-id="${p.id}">
+            <button class="add" data-id="${p.id}" aria-label="Aggiungi ${p.name} alla wishlist">+</button>
+          </div>
         </div>
       </div>
     </article>
@@ -56,8 +73,10 @@ function openProductPreview(product) {
 }
 
 grid.addEventListener('click', e => {
-  const image = e.target.closest('.product-image');
-  if (!image) return;
+  if (e.target.closest('.wishlist-control')) return;
+  const card = e.target.closest('.product-card');
+  if (!card) return;
+  const image = card.querySelector('.product-image');
   const product = products.find(item => item.id === image.dataset.productId);
   if (product) openProductPreview(product);
 });
