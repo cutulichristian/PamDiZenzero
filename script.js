@@ -107,18 +107,28 @@ function drawWishlist() {
         </div>
       `).join('') 
     : '<p class="empty">La tua wishlist è ancora vuota.<br>Esplora le creazioni e aggiungi le tue preferite.</p>'; 
+
+  grid.querySelectorAll('.add').forEach(button => {
+    const product = products.find(item => item.id === button.dataset.id);
+    const isSelected = wishlist.includes(button.dataset.id);
+    button.textContent = isSelected ? '✓' : '+';
+    button.setAttribute('aria-label', `${isSelected ? 'Rimuovi' : 'Aggiungi'} ${product.name} ${isSelected ? 'dalla' : 'alla'} wishlist`);
+  });
     
   localStorage.setItem('pamWishlist', JSON.stringify(wishlist)); 
 }
 
 grid.addEventListener('click', e => {
   const id = e.target.dataset.id;
-  if (id && !wishlist.includes(id)) {
+  if (!id) return;
+
+  if (wishlist.includes(id)) {
+    wishlist = wishlist.filter(itemId => itemId !== id);
+  } else {
     wishlist.push(id);
-    drawWishlist();
-    e.target.textContent = '✓';
-    setTimeout(() => e.target.textContent = '+', 900);
   }
+
+  drawWishlist();
 });
 
 document.querySelector('#wishlist-items').addEventListener('click', e => {
