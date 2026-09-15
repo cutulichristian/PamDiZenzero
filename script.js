@@ -11,7 +11,7 @@ const products = [
   { id: 'alberopeloso', name: 'Albero soffice illuminato', kind: 'Decorazione natalizia', price: '€ 5,00', amount: 5, image: 'assets/alberopeloso.jpg'},
   { id: 'babbetto', name: 'Babbetto in feltro', kind: 'Decorazione natalizia', price: '€ 5,00', amount: 5, image: 'assets/babbetto.jpg'},
   { id: 'candelababbo', name: 'Candela con Babbo Natale', kind: 'Candela natalizia', price: '€ 5,00', amount: 5, image: 'assets/candelababbo.jpg'},
-  { id: 'candelapupazzo', name: 'Candela con pupazzo', kind: 'Candela natalizia', price: '€ 5,00', amount: 5, image: 'assets/candelapupazzo.jpg'},
+  { id: 'candelapupazzoo', name: 'Candela con pupazzo', kind: 'Candela natalizia', price: '€ 5,00', amount: 5, image: 'assets/candelapupazzoo.jpg'},
   { id: 'cornice', name: 'Cornice natalizia - natività', kind: 'Decorazione natalizia', price: '€ 12,00', amount: 12, image: 'assets/cornice.jpg'},
   { id: 'fuoriportaazzurros', name: 'Fuoriporta piccolo', kind: 'Fuoriporta natalizio', price: '€ 6,00', amount: 6, image: 'assets/fuoriportaazzurros.jpg'},
   { id: 'fuoriportabiancos', name: 'Fuoriporta piccolo', kind: 'Fuoriporta natalizio', price: '€ 6,00', amount: 6, image: 'assets/fuoriportabiancos.jpg'},
@@ -20,7 +20,7 @@ const products = [
   { id: 'portaovetti', name: 'Albero dell\'avvento', kind: 'Decorazione natalizia', price: '€ 10,00', amount: 10, image: 'assets/portaovetti.jpg'},
   { id: 'slittababboxl', name: 'Slitta di Babbo Natale', kind: 'Decorazione natalizia', price: '€ 18,00', amount: 18, image: 'assets/slittababboxl.jpg'},
   { id: 'strega', name: 'Strega in feltro', kind: 'Decorazione natalizia', price: '€ 13,00', amount: 13, image: 'assets/strega.jpg'},
-  { id: 'villaggiodeltro', name: 'Villaggio in feltro', kind: 'Villaggio natalizio', price: '€ 10,00', amount: 10, image: 'assets/villaggiodeltro.jpg'},
+  { id: 'villaggiofeltro', name: 'Villaggio in feltro', kind: 'Villaggio natalizio', price: '€ 10,00', amount: 10, image: 'assets/villaggiofeltro.jpg'},
   { id: 'villaggiofeltrolungo', name: 'Villaggio in feltro', kind: 'Villaggio natalizio', price: '€ 12,00', amount: 12, image: 'assets/villaggiofeltrolungo.jpg'},
   { id: 'villaggiotondorami', name: 'Villaggio natalizio', kind: 'Villaggio natalizio', price: '€ 12,00', amount: 12, image: 'assets/villaggiotondorami.jpg'},
 
