@@ -40,9 +40,9 @@ const products = [
   { id: 'stanzacornice', name: 'Stanza decorata con portafoto', kind: 'Decorazioni natalizie', price: '€ 25,00', amount: 25, image: 'assets/stanzacornice.jpg' },
   { id: 'stanzadelfolletto', name: 'Stanza decorata del folletto', kind: 'Decorazioni natalizie', price: '€ 25,00', amount: 25, image: 'assets/stanzadelfolletto.jpg' },
   { id: 'cornicetopinidiamond', name: 'Quadro Diamond Painting Topolini', kind: 'Quadro', price: '€ 20,00', amount: 20, image: 'assets/topinidiamond.jpg' },
-  { id: 'cofanettofotoS', name: 'Stanza decorata con portafoto', kind: 'Decorazioni natalizie', price: '€ 15,00', amount: 15, image: 'assets/cofanettofotoS.jpg' },
-  { id: 'cofanettofotoM', name: 'Stanza decorata con portafoto', kind: 'Decorazioni natalizie', price: '€ 18,00', amount: 18, image: 'assets/cofanettofotoM.jpg' },
-  { id: 'grinch', name: 'Stanza decorata del Grinch', kind: 'Decorazioni natalizie', price: '€ 35,00', amount: 35, image: 'assets/grinch.png' },
+  { id: 'cofanettofotoS', name: 'Stanza decorata con portafoto', kind: 'Decorazioni natalizie', price: '€ 15,00', amount: 15, image: 'assets/cofanettofotoS.JPG' },
+  { id: 'cofanettofotoM', name: 'Stanza decorata con portafoto', kind: 'Decorazioni natalizie', price: '€ 18,00', amount: 18, image: 'assets/cofanettofotoM.JPG' },
+  { id: 'grinch', name: 'Stanza decorata del Grinch', kind: 'Decorazioni natalizie', price: '€ 35,00', amount: 35, image: 'assets/grinch.PNG' },
 
 ];
 
