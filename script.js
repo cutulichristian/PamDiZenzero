@@ -21,7 +21,28 @@ const products = [
   { id: 'slittababboxl', name: 'Slitta di Babbo Natale', kind: 'Decorazione natalizia', price: '€ 18,00', amount: 18, image: 'assets/slittababboxl.jpg' },
   { id: 'strega', name: 'Strega in feltro', kind: 'Decorazione natalizia', price: '€ 13,00', amount: 13, image: 'assets/strega.jpg' },
   { id: 'villaggiofeltrolungo', name: 'Villaggio in feltro', kind: 'Villaggio natalizio', price: '€ 12,00', amount: 12, image: 'assets/villaggiofeltrolungo.jpg' },
-  { id: 'villaggiotondorami', name: 'Villaggio natalizio', kind: 'Villaggio natalizio', price: '€ 12,00', amount: 12, image: 'assets/villaggiotondorami.jpg' }
+  { id: 'villaggiotondorami', name: 'Villaggio natalizio', kind: 'Villaggio natalizio', price: '€ 12,00', amount: 12, image: 'assets/villaggiotondorami.jpg' },
+  { id: 'diamondpandispagna', name: 'Diamond Painting Casetta', kind: 'Decorazione con base led', price: '€ 12,00', amount: 12, image: 'assets/pandispagnaled.png' },
+  { id: 'diamondrenna', name: 'Diamond Painting Renna', kind: 'Decorazione con base led', price: '€ 12,00', amount: 12, image: 'assets/rennaleddiamond.png' },
+  { id: 'cornicebabbodiamond', name: 'Quadro Diamond Painting Babbo Natale', kind: 'Quadro', price: '€ 16,00', amount: 16, image: 'assets/babbodiamond.jpg' },
+  { id: 'diamondpandispagna', name: 'Diamond Painting Casetta', kind: 'Decorazione con base led', price: '€ 10,00', amount: 10, image: 'assets/pandispagnaled.png' },
+  { id: 'bigliettoalberobabbo', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettoalberobabbo.jpg' },
+  { id: 'bigliettobabboslitta', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettobabboslitta.jpg' },
+  { id: 'bigliettorennababbo', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettorennababbo.jpg' },
+  { id: 'bigliettocampana', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettocampana.jpg' },
+  { id: 'bigliettocampanella', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettocampanella.jpg' },
+  { id: 'bigliettoregalo', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettoregalo.jpg' },
+  { id: 'biglietto3d1', name: 'Biglietto Diamond Painting 3D', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/biglietto3d1.jpg' },
+  { id: 'biglietto3d2', name: 'Biglietto Diamond Painting 3D', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/biglietto3d2.jpg' },
+  { id: 'bigliettobabbobrilla1', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettobabbobrilla1.jpg' },
+  { id: 'bigliettobabbobrillo', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettobabbobrillo.jpg' },
+  { id: 'bigliettobabbopupazzo', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettobabbopupazzo.jpg' },
+  { id: 'bigliettopallina', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettopallina.jpg' },
+  { id: 'bugliettobabboalbero', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bugliettobabboalbero.jpg' },
+  { id: 'stanzacornice', name: 'Stanza decorata con portafoto', kind: 'Decorazioni natalizie', price: '€ 25,00', amount: 25, image: 'assets/stanzacornice.jpg' },
+  { id: 'stanzadelfolletto', name: 'Stanza decorata del folletto', kind: 'Decorazioni natalizie', price: '€ 22,00', amount: 22, image: 'assets/stanzadelfolletto.jpg' },
+  { id: 'cornicetopinidiamond', name: 'Quadro Diamond Painting Topolini', kind: 'Quadro', price: '€ 16,00', amount: 16, image: 'assets/topinidiamond.jpg' },
+
 ];
 
 const productMap = new Map(products.map((product) => [product.id, product]));
@@ -58,6 +79,55 @@ const previewKind = document.querySelector('#preview-kind');
 const previewPrice = document.querySelector('#preview-price');
 const previewEmail = document.querySelector('#preview-email');
 const previewDownload = document.querySelector('#preview-download');
+const soldOutProductIds = new Set([
+  'stanzadelfolletto',
+  'alberopeloso',
+  'stanzacornice'
+]);
+
+function isSoldOut(productId) {
+  return soldOutProductIds.has(productId);
+}
+
+function markProductAsSoldOut(productId) {
+  soldOutProductIds.add(productId);
+
+  const images = [...document.querySelectorAll(`img[data-product-id="${CSS.escape(productId)}"]`)];
+
+  if (!images.length) return;
+
+  images.forEach((image) => {
+    const container = image.closest('.product-card, .wish-row');
+    if (!container) return;
+    if (container.dataset.soldOut === 'true') return;
+
+    container.dataset.soldOut = 'true';
+    container.style.position = 'relative';
+    image.style.filter = 'grayscale(1)';
+    image.style.opacity = '0.55';
+    image.style.cursor = 'not-allowed';
+    image.setAttribute('aria-disabled', 'true');
+
+    const badge = document.createElement('span');
+    badge.textContent = 'Sold Out';
+    badge.style.position = 'absolute';
+    badge.style.top = '50%';
+    badge.style.left = '50%';
+    badge.style.transform = 'translate(-50%, -50%)';
+    badge.style.background = 'rgba(0, 0, 0, 0.72)';
+    badge.style.color = '#fff';
+    badge.style.padding = '8px 12px';
+    badge.style.borderRadius = '999px';
+    badge.style.fontSize = '12px';
+    badge.style.fontWeight = '700';
+    badge.style.letterSpacing = '0.08em';
+    badge.style.textTransform = 'uppercase';
+    badge.style.zIndex = '2';
+    badge.style.pointerEvents = 'none';
+    badge.style.whiteSpace = 'nowrap';
+    container.appendChild(badge);
+  });
+}
 
 function drawProducts() {
   if (!grid) return;
@@ -121,14 +191,14 @@ if (grid) {
 
     const image = card.querySelector('.product-image');
     const product = image ? productMap.get(image.dataset.productId) : null;
-    if (product) openProductPreview(product);
+    if (product && !isSoldOut(product.id)) openProductPreview(product);
   });
 
   grid.addEventListener('keydown', (e) => {
     if (!e.target.classList.contains('product-image') || !['Enter', ' '].includes(e.key)) return;
     e.preventDefault();
     const product = productMap.get(e.target.dataset.productId);
-    if (product) openProductPreview(product);
+    if (product && !isSoldOut(product.id)) openProductPreview(product);
   });
 }
 
@@ -177,10 +247,11 @@ function drawWishlist() {
 
   list.innerHTML = items.length
     ? items.map((p) => `
-        <div class="wish-row">
-          <img src="${p.image}" alt="">
+        <div class="wish-row ${isSoldOut(p.id) ? 'sold-out-item' : ''}">
+          <img src="${p.image}" alt="" data-product-id="${p.id}">
           <div><strong>${p.name}</strong><small>${p.kind}</small></div>
           <span class="wish-price">${p.price}</span>
+          ${isSoldOut(p.id) ? '<span class="wishlist-soldout">Sold Out</span>' : ''}
           <button data-remove="${p.id}" aria-label="Rimuovi ${p.name}">×</button>
         </div>
       `).join('')
@@ -337,3 +408,13 @@ if (year) year.textContent = new Date().getFullYear();
 
 drawProducts();
 drawWishlist();
+
+for (const productId of soldOutProductIds) {
+  markProductAsSoldOut(productId);
+}
+
+const soldOutParam = new URLSearchParams(window.location.search).get('soldout');
+if (soldOutParam) {
+  soldOutProductIds.add(soldOutParam);
+  markProductAsSoldOut(soldOutParam);
+}
