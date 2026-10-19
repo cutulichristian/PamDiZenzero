@@ -7,8 +7,8 @@ const products = [
   { id: 'babboarco', name: 'Villaggio di Babbo Natale con arco', kind: 'Decorazione natalizia', price: '€ 30,00', amount: 30, image: 'assets/babboarco.jpg' },
   { id: 'villaggiofeltro', name: 'Villaggio in feltro', kind: 'Decorazione natalizia', price: '€ 15,00', amount: 15, image: 'assets/villaggiofeltro.jpg' },
   { id: 'lanternafeltro', name: 'Lanterna in feltro con lumino', kind: 'Decorazione natalizia', price: '€ 5,00', amount: 5, image: 'assets/lanternafeltro.jpg' },
-  { id: 'alberopeloso', name: 'Albero soffice illuminato', kind: 'Decorazione natalizia', price: '€ 5,00', amount: 5, image: 'assets/alberopeloso.jpg' },
-  { id: 'babbetto', name: 'Babbetto in feltro', kind: 'Decorazione natalizia', price: '€ 5,00', amount: 5, image: 'assets/babbetto.jpg' },
+  { id: 'alberopeloso', name: 'Albero soffice illuminato', kind: 'Decorazione natalizia', price: '€ 10,00', amount: 10, image: 'assets/alberopeloso.jpg' },
+  { id: 'babbetto', name: 'Gnometto in feltro', kind: 'Decorazione natalizia', price: '€ 5,00', amount: 5, image: 'assets/babbetto.jpg' },
   { id: 'candelababbo', name: 'Candela con Babbo Natale', kind: 'Candela natalizia', price: '€ 5,00', amount: 5, image: 'assets/candelababbo.jpg' },
   { id: 'candelapupazzoo', name: 'Candela con pupazzo', kind: 'Candela natalizia', price: '€ 5,00', amount: 5, image: 'assets/candelapupazzoo.jpg' },
   { id: 'cornice', name: 'Cornice natalizia - natività', kind: 'Decorazione natalizia', price: '€ 15,00', amount: 15, image: 'assets/cornice.jpg' },
@@ -39,6 +39,12 @@ const products = [
   { id: 'bugliettobabboalbero', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bugliettobabboalbero.jpg' },
   { id: 'stanzacornice', name: 'Stanza decorata con portafoto', kind: 'Decorazioni natalizie', price: '€ 25,00', amount: 25, image: 'assets/stanzacornice.jpg' },
   { id: 'stanzadelfolletto', name: 'Stanza decorata del folletto', kind: 'Decorazioni natalizie', price: '€ 25,00', amount: 25, image: 'assets/stanzadelfolletto.jpg' },
+  { id: 'corniceverdebbbo', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/corniceverdebbbo.jpg' },
+  { id: 'cornicebiancababbo', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicebiancababbo.jpg' },
+  { id: 'cornicerossababbo', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicerossababbo.jpg' },
+  { id: 'paintingincorniciatopaesaggio', name: 'Cornice Diamont Painting', kind: 'Decorazioni natalizie', price: '€ 13,00', amount: 13, image: 'assets/paintingincorniciatopaesaggio.jpg' },
+  { id: 'paintingincorniciatotreno', name: 'Cornice Diamont Painting', kind: 'Decorazioni natalizie', price: '€ 13,00', amount: 13, image: 'assets/paintingincorniciatotreno.jpg' },
+  { id: 'paintingincorniciatoorso', name: 'Cornice Diamont Painting', kind: 'Decorazioni natalizie', price: '€ 13,00', amount: 13, image: 'assets/paintingincorniciatoorso.jpg' },
   { id: 'cornicetopinidiamond', name: 'Quadro Diamond Painting Topolini', kind: 'Quadro', price: '€ 20,00', amount: 20, image: 'assets/topinidiamond.jpg' },
   { id: 'cofanettofotoS', name: 'Stanza decorata con portafoto', kind: 'Decorazioni natalizie', price: '€ 15,00', amount: 15, image: 'assets/cofanettofotoS.JPG' },
   { id: 'cofanettofotoM', name: 'Stanza decorata con portafoto', kind: 'Decorazioni natalizie', price: '€ 18,00', amount: 18, image: 'assets/cofanettofotoM.JPG' },
@@ -83,7 +89,8 @@ const previewDownload = document.querySelector('#preview-download');
 const soldOutProductIds = new Set([
   'stanzadelfolletto',
   'alberopeloso',
-  'stanzacornice'
+  'stanzacornice',
+  'grinch'
 ]);
 
 function isSoldOut(productId) {
@@ -104,13 +111,23 @@ function markProductAsSoldOut(productId) {
 
     container.dataset.soldOut = 'true';
     container.style.position = 'relative';
-    image.style.filter = 'grayscale(1)';
-    image.style.opacity = '0.55';
-    image.style.cursor = 'not-allowed';
-    image.setAttribute('aria-disabled', 'true');
+    image.style.filter = 'none';
+    image.style.opacity = '1';
+    image.style.cursor = 'zoom-in';
+    image.removeAttribute('aria-disabled');
+
+    const addButton = container.querySelector('.wishlist-control .add');
+    if (addButton instanceof HTMLButtonElement) {
+      addButton.disabled = false;
+      addButton.removeAttribute('aria-disabled');
+      addButton.setAttribute('aria-label', `Aggiungi ${productMap.get(productId)?.name ?? 'prodotto'} alla wishlist (Sold Out)`);
+    }
 
     const badge = document.createElement('span');
-    badge.textContent = 'Sold Out';
+    badge.append('Sold Out');
+    const requestNote = document.createElement('small');
+    requestNote.textContent = 'Aggiungilo alla wishlist per richiederlo!';
+    badge.append(requestNote);
     badge.style.position = 'absolute';
     badge.style.top = '50%';
     badge.style.left = '50%';
@@ -118,14 +135,21 @@ function markProductAsSoldOut(productId) {
     badge.style.background = 'rgba(0, 0, 0, 0.72)';
     badge.style.color = '#fff';
     badge.style.padding = '8px 12px';
-    badge.style.borderRadius = '999px';
+    badge.style.display = 'grid';
+    badge.style.gap = '4px';
+    badge.style.maxWidth = 'calc(100% - 24px)';
+    badge.style.borderRadius = '8px';
     badge.style.fontSize = '12px';
     badge.style.fontWeight = '700';
     badge.style.letterSpacing = '0.08em';
     badge.style.textTransform = 'uppercase';
     badge.style.zIndex = '2';
     badge.style.pointerEvents = 'none';
-    badge.style.whiteSpace = 'nowrap';
+    badge.style.textAlign = 'center';
+    requestNote.style.fontSize = '10px';
+    requestNote.style.fontWeight = '400';
+    requestNote.style.letterSpacing = 'normal';
+    requestNote.style.textTransform = 'none';
     container.appendChild(badge);
   });
 }
@@ -192,14 +216,14 @@ if (grid) {
 
     const image = card.querySelector('.product-image');
     const product = image ? productMap.get(image.dataset.productId) : null;
-    if (product && !isSoldOut(product.id)) openProductPreview(product);
+    if (product) openProductPreview(product);
   });
 
   grid.addEventListener('keydown', (e) => {
     if (!e.target.classList.contains('product-image') || !['Enter', ' '].includes(e.key)) return;
     e.preventDefault();
     const product = productMap.get(e.target.dataset.productId);
-    if (product && !isSoldOut(product.id)) openProductPreview(product);
+    if (product) openProductPreview(product);
   });
 }
 
@@ -304,7 +328,11 @@ if (bookingForm) {
       telefono: data.get('telefono'),
       messaggio: data.get('messaggio')
     };
-    data.append('wishlist', wishlist.map((id) => productMap.get(id)?.name).join(', '));
+    data.append('wishlist', wishlist.map((id) => {
+      const product = productMap.get(id);
+      if (!product) return null;
+      return `${product.name}${isSoldOut(id) ? ' (Sold Out)' : ''}`;
+    }).filter(Boolean).join(', '));
     data.append('_subject', 'Nuova richiesta dal sito Pam di Zenzero');
     data.append('_template', 'table');
 
