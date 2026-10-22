@@ -49,9 +49,9 @@ const products = [
   { id: 'cofanettofotoS', name: 'Stanza decorata con portafoto', kind: 'Decorazioni natalizie', price: '€ 15,00', amount: 15, image: 'assets/cofanettofotoS.JPG' },
   { id: 'cofanettofotoM', name: 'Stanza decorata con portafoto', kind: 'Decorazioni natalizie', price: '€ 18,00', amount: 18, image: 'assets/cofanettofotoM.JPG' },
   { id: 'grinch', name: 'Stanza decorata del Grinch', kind: 'Decorazioni natalizie', price: '€ 35,00', amount: 35, image: 'assets/grinch.PNG' },
-  { id: 'cornicebiancababborosso', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicebiancababborosso.jpg' },
-  { id: 'babboarcoceppo', name: 'Babbo Natale con slitta (L)', kind: 'Decorazioni natalizie', price: '€ 35,00', amount: 35, image: 'assets/babboarcoceppo.jpg' },
-  { id: 'babboarcoceppos', name: 'Babbo Natale con slitta (M)', kind: 'Decorazioni natalizie', price: '€ 30,00', amount: 30, image: 'assets/babboarcoceppos.jpg' },
+  { id: 'cornicebiancababborosso', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicebiancababborosso.jpeg' },
+  { id: 'babboarcoceppo', name: 'Babbo Natale con slitta (L)', kind: 'Decorazioni natalizie', price: '€ 35,00', amount: 35, image: 'assets/babboarcoceppo.jpeg' },
+  { id: 'babboarcoceppos', name: 'Babbo Natale con slitta (M)', kind: 'Decorazioni natalizie', price: '€ 30,00', amount: 30, image: 'assets/babboarcoceppos.jpeg' },
 
 
 ];
