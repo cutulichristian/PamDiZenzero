@@ -54,6 +54,8 @@ const products = [
   { id: 'babboarcoceppos', name: 'Babbo Natale con slitta (M)', kind: 'Decorazioni natalizie', price: '€ 30,00', amount: 30, image: 'assets/babboarcoceppos.jpeg' },
   { id: 'babbocepporenna', name: 'Babbo Natale con renna (M)', kind: 'Decorazioni natalizie', price: '€ 30,00', amount: 30, image: 'assets/babbocepporenna.JPG' },
   { id: 'cornicescii', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicescii.JPG' },
+  { id: 'cornicetuttabianca', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicetuttabianca.JPG' },
+  { id: 'villaggiobabbopeloso', name: 'Babbo Natale con renna (M)', kind: 'Decorazioni natalizie', price: '€ 30,00', amount: 30, image: 'assets/villaggiobabbopeloso.JPG' },
 
 
 ];
