@@ -350,6 +350,7 @@ if (bookingForm) {
       if (!product) return null;
       return `${product.name}${isSoldOut(id) ? ' (Sold Out)' : ''}`;
     }).filter(Boolean).join(', '));
+    data.append('id', wishlist.join(', '));
     data.append('_subject', 'Nuova richiesta dal sito Pam di Zenzero');
     data.append('_template', 'table');
 
