@@ -59,7 +59,6 @@ const products = [
   { id: 'alberoazzurro', name: 'Albero soffice illuminato', kind: 'Decorazioni natalizie', price: '€ 10,00', amount: 10, image: 'assets/alberoazzurro.JPG' },
   { id: 'alberobiancos', name: 'Albero soffice illuminato', kind: 'Decorazioni natalizie', price: '€ 8,00', amount: 8, image: 'assets/alberobiancos.JPG' },
   { id: 'cofanettogrinch', name: 'Stanza decorata del Grinch con portafoto', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cofanettogrinch.PNG' },
-  { id: 'cornicescritta', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicescritta.JPG' },
   { id: 'paesaggiolegno', name: 'Paesaggio in legno natalizio illuminato', kind: 'Decorazioni natalizie', price: '€ 25,00', amount: 25, image: 'assets/paesaggiolegno.JPG' },
   { id: 'cornicescritta', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicescritta.JPG' },
   { id: 'cornicelfetto', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicelfetto.PNG' },
