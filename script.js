@@ -58,9 +58,9 @@ const products = [
   { id: 'villaggiobabbopeloso', name: 'Babbo Natale con renna (M)', kind: 'Decorazioni natalizie', price: '€ 30,00', amount: 30, image: 'assets/villaggiobabbopeloso.JPG' },
   { id: 'alberoazzurro', name: 'Albero soffice illuminato', kind: 'Decorazioni natalizie', price: '€ 10,00', amount: 10, image: 'assets/alberoazzurro.JPG' },
   { id: 'alberobiancos', name: 'Albero soffice illuminato', kind: 'Decorazioni natalizie', price: '€ 8,00', amount: 8, image: 'assets/alberobiancos.JPG' },
-  { id: 'cofanettogrinch', name: 'Stanza decorata del Grinch con portafoto', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cofanettogrinch.JPG' },
-  { id: 'cornicescritta', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicescritta.jpg' },
-  { id: 'paesaggiolegno', name: 'Paesaggio in legno natalizio illuminato', kind: 'Decorazioni natalizie', price: '€ 25,00', amount: 25, image: 'assets/paesaggiolegno.jpg' },
+  { id: 'cofanettogrinch', name: 'Stanza decorata del Grinch con portafoto', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cofanettogrinch.PNG' },
+  { id: 'cornicescritta', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicescritta.JPG' },
+  { id: 'paesaggiolegno', name: 'Paesaggio in legno natalizio illuminato', kind: 'Decorazioni natalizie', price: '€ 25,00', amount: 25, image: 'assets/paesaggiolegno.JPG' },
 
 
 ];
