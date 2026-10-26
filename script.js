@@ -108,6 +108,10 @@ const soldOutProductIds = new Set([
   'cofanettogrinch',
   'cornicebiancababbo',
   'cornicetuttabianca',
+  'slittababboxl',
+  'cornicelfetto',
+  
+
 ]);
 
 function isSoldOut(productId) {
