@@ -4,7 +4,7 @@ const products = [
   { id: 'diamontPaintingMulino', name: 'Diamont Painting "Mulino"', kind: 'Decorazione con base', price: '€ 14,00', amount: 14, image: 'assets/mulino.jpg' },
   { id: 'bigliettoRenna', name: 'Biglietto Diamont Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettorenna.jpg' },
   { id: 'bigliettoSclaus', name: 'Biglietto Diamont Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettosclaus.jpg' },
-  { id: 'babboarco', name: 'Villaggio di Babbo Natale con arco', kind: 'Decorazione natalizia', price: '€ 30,00', amount: 30, image: 'assets/babboarco.jpg' },
+  { id: 'babboarco', name: 'Villaggio di Babbo Natale con arco', kind: 'Decorazione natalizia', price: '€ 35,00', amount: 35, image: 'assets/babboarco.jpg' },
   { id: 'villaggiofeltro', name: 'Villaggio in feltro', kind: 'Decorazione natalizia', price: '€ 15,00', amount: 15, image: 'assets/villaggiofeltro.jpg' },
   { id: 'lanternafeltro', name: 'Lanterna in feltro con lumino', kind: 'Decorazione natalizia', price: '€ 5,00', amount: 5, image: 'assets/lanternafeltro.jpg' },
   { id: 'alberopeloso', name: 'Albero soffice illuminato', kind: 'Decorazione natalizia', price: '€ 10,00', amount: 10, image: 'assets/alberopeloso.jpg' },
@@ -62,6 +62,7 @@ const products = [
   { id: 'paesaggiolegno', name: 'Paesaggio in legno natalizio illuminato', kind: 'Decorazioni natalizie', price: '€ 25,00', amount: 25, image: 'assets/paesaggiolegno.JPG' },
   { id: 'cornicescritta', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicescritta.JPG' },
   { id: 'cornicelfetto', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicelfetto.PNG' },
+  { id: 'villaggionelegno', name: 'Paesaggio in legno natalizio illuminato', kind: 'Decorazioni natalizie', price: '€ 50,00', amount: 50, image: 'assets/villaggionelegno.JPG' },
 
 
 ];
@@ -102,7 +103,6 @@ const previewEmail = document.querySelector('#preview-email');
 const previewDownload = document.querySelector('#preview-download');
 const soldOutProductIds = new Set([
   'stanzadelfolletto',
-  'alberopeloso',
   'stanzacornice',
   'grinch',
   'cofanettogrinch',
@@ -110,8 +110,11 @@ const soldOutProductIds = new Set([
   'cornicetuttabianca',
   'slittababboxl',
   'cornicelfetto',
-  
-
+  'cornicetopinidiamond',
+  'paesaggiolegno',
+  'bigliettoRenna',
+  'bigliettocampana',
+  'bigliettopallina'
 ]);
 
 function isSoldOut(productId) {
