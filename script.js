@@ -57,13 +57,18 @@ const products = [
   { id: 'cornicetuttabianca', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicetuttabianca.JPG' },
   { id: 'villaggiobabbopeloso', name: 'Babbo Natale con renna (M)', kind: 'Decorazioni natalizie', price: '€ 30,00', amount: 30, image: 'assets/villaggiobabbopeloso.JPG' },
   { id: 'alberoazzurro', name: 'Albero soffice illuminato', kind: 'Decorazioni natalizie', price: '€ 10,00', amount: 10, image: 'assets/alberoazzurro.JPG' },
+  { id: 'alberotiffany', name: 'Albero soffice illuminato', kind: 'Decorazioni natalizie', price: '€ 8,00', amount: 8, image: 'assets/alberotiffany.JPG' },
   { id: 'alberobiancos', name: 'Albero soffice illuminato', kind: 'Decorazioni natalizie', price: '€ 8,00', amount: 8, image: 'assets/alberobiancos.JPG' },
   { id: 'cofanettogrinch', name: 'Stanza decorata del Grinch con portafoto', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cofanettogrinch.PNG' },
   { id: 'paesaggiolegno', name: 'Paesaggio in legno natalizio illuminato', kind: 'Decorazioni natalizie', price: '€ 25,00', amount: 25, image: 'assets/paesaggiolegno.JPG' },
   { id: 'cornicescritta', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicescritta.JPG' },
   { id: 'cornicelfetto', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicelfetto.PNG' },
   { id: 'villaggionelegno', name: 'Paesaggio in legno natalizio illuminato', kind: 'Decorazioni natalizie', price: '€ 50,00', amount: 50, image: 'assets/villaggionelegno.JPG' },
-
+  { id: 'casetta', name: 'Casetta', kind: 'Decorazione natalizia', price: '€ 55,00', amount: 55, image: 'assets/casettinaA.JPG', images: ['assets/casettinaA.JPG', 'assets/casettinaB.JPG'] },
+  { id: 'caminettoillu', name: 'Diamont Painting "Camino"', kind: 'Decorazione con base', price: '€ 14,00', amount: 14, image: 'assets/caminettoillu.JPG' },
+  { id: 'cornicefollettino', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicefollettino.JPG' },
+  { id: 'corniceverdescii', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/corniceverdescii.JPG' },
+  { id: 'carillon', name: 'Carillon in legno', kind: 'Carillon rotante con musica natalizia', price: '€ 16,00', amount: 16, image: 'assets/carillon.JPG' },
 
 ];
 
@@ -99,6 +104,7 @@ const previewImage = document.querySelector('#preview-image');
 const previewTitle = document.querySelector('#preview-title');
 const previewKind = document.querySelector('#preview-kind');
 const previewPrice = document.querySelector('#preview-price');
+const previewThumbnails = document.querySelector('#preview-thumbnails');
 const previewEmail = document.querySelector('#preview-email');
 const previewDownload = document.querySelector('#preview-download');
 const soldOutProductIds = new Set([
@@ -203,13 +209,43 @@ function drawProducts() {
 function openProductPreview(product) {
   if (!productPreview || !previewImage || !previewTitle || !previewKind || !previewPrice || !previewEmail || !previewDownload) return;
 
-  previewImage.src = product.image;
+  const images = product.images ?? [product.image];
+  const selectImage = (image) => {
+    previewImage.src = image;
+    previewDownload.href = image;
+    previewDownload.download = image.split('/').pop();
+  };
+
+  selectImage(images[0]);
   previewImage.alt = product.name;
   previewTitle.textContent = product.name;
   previewKind.textContent = product.kind;
   previewPrice.textContent = product.price;
-  previewDownload.href = product.image;
-  previewDownload.download = product.image.split('/').pop();
+
+  if (previewThumbnails) {
+    previewThumbnails.hidden = images.length < 2;
+    previewThumbnails.replaceChildren(...images.map((image, index) => {
+      const button = document.createElement('button');
+      button.className = 'preview-thumbnail';
+      button.type = 'button';
+      button.setAttribute('aria-label', `${product.name}, foto ${index + 1}`);
+      button.setAttribute('aria-pressed', String(index === 0));
+
+      const thumbnail = document.createElement('img');
+      thumbnail.src = image;
+      thumbnail.alt = '';
+      button.append(thumbnail);
+      button.addEventListener('click', () => {
+        selectImage(image);
+        previewThumbnails.querySelectorAll('.preview-thumbnail').forEach((item, selectedIndex) => {
+          item.setAttribute('aria-pressed', String(selectedIndex === index));
+        });
+      });
+
+      return button;
+    }));
+  }
+
   previewEmail.href = `mailto:info@pamdizenzero.it?subject=${encodeURIComponent(product.name)}&body=${encodeURIComponent(`Buongiorno, vorrei ricevere maggiori informazioni sul prodotto "${product.name}" (${product.kind}, ${product.price}).`)}`;
   productPreview.showModal();
 }
