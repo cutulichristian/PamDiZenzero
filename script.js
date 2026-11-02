@@ -33,6 +33,10 @@ const products = [
   { id: 'biglietto3d1', name: 'Biglietto Diamond Painting 3D', kind: 'Biglietti da regalare', price: '€ 4,50', amount: 4.5, image: 'assets/biglietto3d1.jpg' },
   { id: 'biglietto3d2', name: 'Biglietto Diamond Painting 3D', kind: 'Biglietti da regalare', price: '€ 4,50', amount: 4.5, image: 'assets/biglietto3d2.jpg' },
   { id: 'bigliettobabbobrilla1', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettobabbobrilla1.jpg' },
+  { id: 'bigliettinogufo', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettinogufo.JPG' },
+  { id: 'bigliettinorenna', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettinorenna.JPG' },
+  { id: 'bigliettinoscoiattolo', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettinoscoiattolo.JPG' },
+  { id: 'bigliettinovolpe', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettinovolpe.JPG' },
   { id: 'bigliettobabbobrillo', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettobabbobrillo.jpg' },
   { id: 'bigliettobabbopupazzo', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettobabbopupazzo.jpg' },
   { id: 'bigliettopallina', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettopallina.jpg' },
@@ -63,12 +67,14 @@ const products = [
   { id: 'paesaggiolegno', name: 'Paesaggio in legno natalizio illuminato', kind: 'Decorazioni natalizie', price: '€ 25,00', amount: 25, image: 'assets/paesaggiolegno.JPG' },
   { id: 'cornicescritta', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicescritta.JPG' },
   { id: 'cornicelfetto', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicelfetto.PNG' },
-  { id: 'villaggionelegno', name: 'Paesaggio in legno natalizio illuminato', kind: 'Decorazioni natalizie', price: '€ 50,00', amount: 50, image: 'assets/villaggionelegno.JPG' },
-  { id: 'casetta', name: 'Casetta', kind: 'Decorazione natalizia', price: '€ 55,00', amount: 55, image: 'assets/casettinaA.JPG', images: ['assets/casettinaA.JPG', 'assets/casettinaB.JPG'] },
+  { id: 'villaggionelegno', name: 'Paesaggio in legno natalizio illuminato', kind: 'Decorazioni natalizie', price: '€ 45,00', amount: 50, image: 'assets/villaggionelegno.JPG' },
+  { id: 'casetta', name: 'Casetta', kind: 'Decorazione natalizia', price: '€ 50,00', amount: 55, image: 'assets/casettinaA.JPG', images: ['assets/casettinaA.JPG', 'assets/casettinaB.JPG'] },
   { id: 'caminettoillu', name: 'Diamont Painting "Camino"', kind: 'Decorazione con base', price: '€ 14,00', amount: 14, image: 'assets/caminettoillu.JPG' },
   { id: 'cornicefollettino', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicefollettino.JPG' },
   { id: 'corniceverdescii', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/corniceverdescii.JPG' },
-  { id: 'carillon', name: 'Carillon in legno', kind: 'Carillon rotante con musica natalizia', price: '€ 16,00', amount: 16, image: 'assets/carillon.JPG' },
+  { id: 'cornicebabbopallinemarroni', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicebabbopallinemarroni.JPG' },
+  { id: 'carillon', name: 'Carillon in legno', kind: 'Carillon rotante con musica natalizia', price: '€ 15,00', amount: 16, image: 'assets/carillon.JPG' },
+  { id: 'carilloncasetta', name: 'Carillon in legno', kind: 'Carillon rotante con musica natalizia', price: '€ 15,00', amount: 16, image: 'assets/carilloncasetta.JPG' },
 
 ];
 
