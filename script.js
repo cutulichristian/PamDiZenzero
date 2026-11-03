@@ -69,7 +69,7 @@ const products = [
   { id: 'cornicelfetto', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicelfetto.PNG' },
   { id: 'villaggionelegno', name: 'Paesaggio in legno natalizio illuminato', kind: 'Decorazioni natalizie', price: '€ 45,00', amount: 50, image: 'assets/villaggionelegno.JPG' },
   { id: 'casetta', name: 'Casetta', kind: 'Decorazione natalizia', price: '€ 50,00', amount: 55, image: 'assets/casettinaA.JPG', images: ['assets/casettinaA.JPG', 'assets/casettinaB.JPG'] },
-  { id: 'caminettoillu', name: 'Diamont Painting "Camino"', kind: 'Decorazione con base', price: '€ 14,00', amount: 14, image: 'assets/caminettoillu.JPG' },
+  { id: 'caminettoillu', name: 'Diamont Painting "Camino"', kind: 'Decorazione con base', price: '€ 15,00', amount: 15, image: 'assets/caminettoillu.JPG' },
   { id: 'cornicefollettino', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicefollettino.JPG' },
   { id: 'corniceverdescii', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/corniceverdescii.JPG' },
   { id: 'cornicebabbopallinemarroni', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicebabbopallinemarroni.JPG' },
@@ -126,7 +126,20 @@ const soldOutProductIds = new Set([
   'paesaggiolegno',
   'bigliettoRenna',
   'bigliettocampana',
-  'bigliettopallina'
+  'bigliettopallina',
+  'babboarcoceppos',
+  'alberotiffany',
+  'alberobiancos',
+  'biglietto3d2',
+  'biglietto3d1',
+  'cornicefollettino',
+  'alberoazzurro',
+  'bigliettinovolpe',
+  'bigliettinoscoiattolo',
+  'bigliettinorenna',
+  'bigliettobabboslitta',
+  'bigliettoalberobabbo',
+  'bigliettorennababbo'
 ]);
 
 function isSoldOut(productId) {
