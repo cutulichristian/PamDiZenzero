@@ -72,7 +72,7 @@ const products = [
   { id: 'caminettoillu', name: 'Diamont Painting "Camino"', kind: 'Decorazione con base', price: '€ 15,00', amount: 15, image: 'assets/caminettoillu.JPG' },
   { id: 'cornicefollettino', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicefollettino.JPG' },
   { id: 'corniceverdescii', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/corniceverdescii.JPG' },
-  { id: 'cornicebabbopaccottrosso', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicebabbopaccottrosso.HEIC' },
+  { id: 'cornicebabbopaccottrosso', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicebabbopaccottrosso.JPG' },
   { id: 'cornicebabbopallinemarroni', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicebabbopallinemarroni.JPG' },
   { id: 'carillon', name: 'Carillon in legno', kind: 'Carillon rotante con musica natalizia', price: '€ 15,00', amount: 16, image: 'assets/carillon.JPG' },
   { id: 'carilloncasetta', name: 'Carillon in legno', kind: 'Carillon rotante con musica natalizia', price: '€ 15,00', amount: 16, image: 'assets/carilloncasetta.JPG' },
