@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Esplora le categorie delle creazioni fatte a mano di Pam di Zenzero." />
+    <title>Categorie · Pam di Zenzero</title>
+    <link rel="icon" type="image/png" href="assets/logo-pam-di-zenzero.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html#home" aria-label="Pam di Zenzero, torna alla home"><img src="assets/logo-pam-di-zenzero.png" alt="Pam di Zenzero" /></a>
+      <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false">☰</button>
+      <nav id="main-nav">
+        <a href="index.html#galleria">Creazioni</a><a href="index.html#storia">L'atelier</a><a href="index.html#contatti">Contatti</a><a href="index.html#dove-trovarci">Dove trovarci</a><a href="come-funziona.html">Come funziona</a>
+      </nav>
+      <a class="wish-link" href="index.html#wishlist">Wishlist <span id="wish-count">0</span></a>
+    </header>
+    <main>
+      <section class="category-page" aria-labelledby="category-page-title">
+        <div class="category-menu">
+          <p class="eyebrow">Il nostro mercatino</p>
+          <h1 id="category-page-title">Scegli una categoria</h1>
+          <p class="category-intro">Esplora le creazioni e trova quella giusta per te.</p>
+          <div class="category-list" id="category-list"></div>
+          <a class="category-home-link" href="index.html#home">Torna alla pagina iniziale</a>
+        </div>
+      </section>
+    </main>
+    <footer><img src="assets/logo-pam-di-zenzero.png" alt="Pam di Zenzero" /><p>Creazioni fatte a mano con cura</p><p><a href="come-funziona.html">Come funziona</a> · <a href="cookie-policy.html">Cookie Policy</a> · <a href="privacy.html">Privacy Policy</a> · © <span id="year"></span> Pam di Zenzero</p></footer>
+    <aside class="cookie-banner" id="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
+      <h2 id="cookie-title">Preferenze cookie</h2>
+      <p id="cookie-description">Usiamo strumenti tecnici per far funzionare wishlist e sito. <a href="cookie-policy.html">Leggi la Cookie Policy</a>.</p>
+      <div class="cookie-actions"><button class="cookie-accept" type="button" data-cookie-accept>Accetta</button><button class="cookie-reject" type="button" data-cookie-reject>Rifiuta</button></div>
+    </aside>
+    <script src="script.js"></script>
+    <script src="cookies.js"></script>
+  </body>
+</html>

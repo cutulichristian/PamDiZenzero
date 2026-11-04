@@ -1,5 +1,5 @@
 const products = [
-  { id: 'diamontPaintingBabboAppeso', name: 'Diamont Painting "Babbo Natale"', kind: 'Decorazione da appendere', price: '€ 12,00', amount: 12, image: 'assets/babboappeso.jpg' },
+  { id: 'diamontPaintingBabboAppeso', name: 'Diamont Painting "Babbo Natale"', kind: 'Decorazione da appendere', price: '€ 11,00', amount: 11, image: 'assets/babboappeso.jpg' },
   { id: 'diamontPaintingBabboBase', name: 'Diamont Painting "Babbo Natale"', kind: 'Decorazione con base', price: '€ 14,00', amount: 14, image: 'assets/babbobase.jpg' },
   { id: 'diamontPaintingMulino', name: 'Diamont Painting "Mulino"', kind: 'Decorazione con base', price: '€ 14,00', amount: 14, image: 'assets/mulino.jpg' },
   { id: 'bigliettoRenna', name: 'Biglietto Diamont Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettorenna.jpg' },
@@ -81,10 +81,157 @@ const products = [
   { id: 'lanterninaarchetta', name: 'Lanterna in legno illuminata', kind: 'Decorazioni natalizie', price: '€ 10,00', amount: 10, image: 'assets/lanterninaarchetta.JPG' },
   { id: 'lanterninacoto', name: 'Lanterna in legno illuminata', kind: 'Decorazioni natalizie', price: '€ 10,00', amount: 10, image: 'assets/lanterninacoto.JPG' },
   { id: 'decorazionialbero', name: 'Decorazioni per l\'Albero di Natale', kind: 'Decorazioni natalizie da appendere', price: '€ 2,00 CAD', amount: 2, image: 'assets/decorazionialbero.JPG' },
+  { id: 'diamondappenderebabbo', name: 'Diamont Painting "Babbo Natale"', kind: 'Decorazione da appendere', price: '€ 7,00', amount: 7, image: 'assets/diamondappenderebabbo.JPG' },
 
 ];
 
 const productMap = new Map(products.map((product) => [product.id, product]));
+const categories = [
+  {
+    id: 'diamond-painting',
+    name: 'Diamont Painting',
+    testProductId: 'diamondappenderebabbo',
+    productIds: [
+      'diamontPaintingBabboAppeso',
+      'diamontPaintingBabboBase',
+      'diamontPaintingMulino',
+      'bigliettoRenna',
+      'bigliettoSclaus',
+      'diamondpandispagna',
+      'diamondrenna',
+      'cornicebabbodiamond',
+      'bigliettoalberobabbo',
+      'bigliettobabboslitta',
+      'bigliettorennababbo',
+      'bigliettocampana',
+      'bigliettocampanella',
+      'bigliettoregalo',
+      'biglietto3d1',
+      'biglietto3d2',
+      'bigliettobabbobrilla1',
+      'bigliettinogufo',
+      'bigliettinorenna',
+      'bigliettinoscoiattolo',
+      'bigliettinovolpe',
+      'bigliettobabbobrillo',
+      'bigliettobabbopupazzo',
+      'bigliettopallina',
+      'bugliettobabboalbero',
+      'caminettoillu',
+      'diamondappenderebabbo',
+      'paintingincorniciatopaesaggio',
+      'paintingincorniciatotreno',
+      'paintingincorniciatoorso',
+      'cornicetopinidiamond',
+      'cornicebabbodiamond',
+    ]
+  },
+  {
+    id: 'creazioni-legno',
+    name: 'Creazioni in legno',
+    testProductId: 'carillon',
+    productIds: [
+      'casetta',
+      'carillon',
+      'carilloncasetta',
+      'carillongiostra',
+      'lanterninaarchetta',
+      'lanterninacoto',
+      'decorazionialbero',
+      'babboarco',
+      'slittababboxl',
+      'babboarcoceppo',
+      'babboarcoceppos',
+      'babbocepporenna'
+    ]
+  },
+  {
+    id: 'cornici-natalizie',
+    name: 'Cornici natalizie',
+    testProductId: 'cornice',
+    productIds: [
+      'cornice',
+      'stanzacornice',
+      'corniceverdebbbo',
+      'cornicebiancababbo',
+      'cornicerossababbo',
+      'cornicebiancababborosso',
+      'cornicescii',
+      'cornicetuttabianca',
+      'cornicescritta',
+      'cornicelfetto',
+      'cornicefollettino',
+      'corniceverdescii',
+      'cornicerossaeverde',
+      'cornicebabbopaccottrosso',
+      'cornicebabbopallinemarroni'
+    ]
+  },
+  {
+    id: 'paesaggi',
+    name: 'Paesaggi',
+    testProductId: 'paesaggiolegno',
+    productIds: [
+      'babboarco',
+      'slittababboxl',
+      'babboarcoceppo',
+      'babboarcoceppos',
+      'babbocepporenna',
+      'villaggiotondorami',
+      'paesaggiolegno',
+      'villaggionelegno'
+    ]
+  },
+  {
+    id: 'creazioni-feltro',
+    name: 'Creazioni in feltro',
+    testProductId: 'villaggiofeltro',
+    productIds: [
+      'villaggiofeltro',
+      'lanternafeltro',
+      'babbetto',
+      'strega',
+      'villaggiofeltrolungo',
+      'villaggiobabbopeloso',
+      'fuoriportaazzurros',
+      'fuoriportabiancos',
+      'fuoriportarossoxl',
+      'fuoriportarossoxl2'
+    ]
+  },
+  {
+    id: 'altre-creazioni',
+    name: 'Altre creazioni',
+    testProductId: 'fuoriportaazzurros',
+    productIds: [
+      'alberopeloso',
+      'alberoazzurro',
+      'alberotiffany',
+      'alberobiancos'
+    ]
+  }
+];
+const assignedProductIds = new Set(
+  categories
+    .filter((category) => category.id !== 'altre-creazioni')
+    .flatMap((category) => category.productIds)
+);
+const otherCreations = categories.find((category) => category.id === 'altre-creazioni');
+if (otherCreations) {
+  const listedOtherProductIds = new Set(otherCreations.productIds);
+  otherCreations.productIds.push(
+    ...products
+      .filter((product) => !assignedProductIds.has(product.id) && !listedOtherProductIds.has(product.id))
+      .map((product) => product.id)
+  );
+}
+for (const category of categories) {
+  for (const productId of category.productIds) {
+    if (!productMap.has(productId)) {
+      console.warn(`ID prodotto non trovato nella categoria "${category.name}": ${productId}`);
+    }
+  }
+}
 const featuredProductIds = ['casetta','villaggionelegno','lanterninacoto','carillongiostra','carillon', 'carilloncasetta'];
 const featuredProducts = [...new Set(featuredProductIds)]
   .slice(0, 6)
@@ -157,10 +304,24 @@ function formatPrice(amount) {
   return Number(amount).toLocaleString('it-IT', { style: 'currency', currency: 'EUR' });
 }
 
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  })[character]);
+}
+
 const grid = document.querySelector('#product-grid');
 const featuredGrid = document.querySelector('#featured-product-grid');
 const featuredSection = document.querySelector('#featured-products');
-const productGrids = [featuredGrid, grid].filter(Boolean);
+const carouselControls = document.querySelectorAll('[data-carousel-direction]');
+const categoryGrid = document.querySelector('#category-product-grid');
+const categoryList = document.querySelector('#category-list');
+const categoryProductsTitle = document.querySelector('#category-products-title');
+const productGrids = [featuredGrid, grid, categoryGrid].filter(Boolean);
 const productPreview = document.querySelector('#product-preview');
 const previewImage = document.querySelector('#preview-image');
 const previewTitle = document.querySelector('#preview-title');
@@ -180,22 +341,21 @@ const soldOutProductIds = new Set([
   'cornicelfetto',
   'cornicetopinidiamond',
   'paesaggiolegno',
+  'alberoazzurro',
   'bigliettoRenna',
   'bigliettocampana',
   'bigliettopallina',
   'babboarcoceppos',
-  'alberotiffany',
-  'alberobiancos',
   'biglietto3d2',
   'biglietto3d1',
   'cornicefollettino',
-  'alberoazzurro',
   'bigliettinovolpe',
   'bigliettinoscoiattolo',
   'bigliettinorenna',
   'bigliettobabboslitta',
   'bigliettoalberobabbo',
-  'bigliettorennababbo'
+  'bigliettorennababbo',
+  'fuoriportarossoxl'
 ]);
 
 function isSoldOut(productId) {
@@ -247,25 +407,28 @@ function markProductAsSoldOut(productId) {
 }
 
 function renderProductCards(items, { featured = false } = {}) {
-  return items.map((p) => `
+  return items.map((p) => {
+    const name = escapeHtml(p.name);
+    return `
     <article class="product-card${featured ? ' featured-product-card' : ''}">
-      <img class="product-image" src="${p.image}" alt="${p.name}" data-product-id="${p.id}" tabindex="0" role="button" aria-label="Apri ${p.name} in grande">
+      <img class="product-image" src="${escapeHtml(p.image)}" alt="${name}" data-product-id="${escapeHtml(p.id)}" tabindex="0" role="button" aria-label="Apri ${name} in grande">
       <div class="product-info">
         <div>
-          <h3>${p.name}</h3>
-          <p>${p.kind}</p>
+          <h3>${name}</h3>
+          <p>${escapeHtml(p.kind)}</p>
         </div>
         ${featured ? '' : `
           <div class="product-footer">
-            <p class="price">${p.price}</p>
-            <div class="wishlist-control" data-control-id="${p.id}">
-              <button class="add" data-id="${p.id}" aria-label="Aggiungi ${p.name} alla wishlist">+</button>
+            <p class="price">${escapeHtml(p.price)}</p>
+            <div class="wishlist-control" data-control-id="${escapeHtml(p.id)}">
+              <button class="add" data-id="${escapeHtml(p.id)}" aria-label="Aggiungi ${name} alla wishlist">+</button>
             </div>
           </div>
         `}
       </div>
     </article>
-  `).join('');
+  `;
+  }).join('');
 }
 
 function drawProducts() {
@@ -273,7 +436,70 @@ function drawProducts() {
   if (featuredGrid && featuredSection) {
     featuredSection.hidden = featuredProducts.length === 0;
     featuredGrid.innerHTML = renderProductCards(featuredProducts, { featured: true });
+    updateCarouselControls();
   }
+}
+
+function updateCarouselControls() {
+  if (!featuredGrid) return;
+  const maxScroll = featuredGrid.scrollWidth - featuredGrid.clientWidth;
+  carouselControls.forEach((button) => {
+    const direction = Number(button.dataset.carouselDirection);
+    button.disabled = direction < 0
+      ? featuredGrid.scrollLeft <= 1
+      : featuredGrid.scrollLeft >= maxScroll - 1;
+  });
+}
+
+carouselControls.forEach((button) => {
+  button.addEventListener('click', () => {
+    if (!featuredGrid) return;
+    const firstCard = featuredGrid.querySelector('.featured-product-card');
+    if (!firstCard) return;
+    const gap = Number.parseFloat(getComputedStyle(featuredGrid).columnGap) || 0;
+    const distance = (firstCard.getBoundingClientRect().width + gap) * Math.max(1, Math.floor(featuredGrid.clientWidth / (firstCard.getBoundingClientRect().width + gap)));
+    featuredGrid.scrollBy({
+      left: distance * Number(button.dataset.carouselDirection),
+      behavior: 'smooth'
+    });
+  });
+});
+
+if (featuredGrid) {
+  featuredGrid.addEventListener('scroll', updateCarouselControls, { passive: true });
+  window.addEventListener('resize', updateCarouselControls);
+}
+
+function drawCategoryMenu() {
+  if (!categoryList) return;
+
+  categoryList.replaceChildren(...categories.map((category) => {
+    const link = document.createElement('a');
+    link.className = 'category-option';
+    link.href = `categoria.html?categoria=${encodeURIComponent(category.id)}`;
+    link.dataset.testProductId = category.testProductId;
+    link.textContent = category.name;
+    return link;
+  }));
+}
+
+drawCategoryMenu();
+
+function drawSelectedCategory() {
+  if (!categoryGrid || !categoryProductsTitle) return;
+
+  const selectedId = new URLSearchParams(window.location.search).get('categoria');
+  const category = categories.find((item) => item.id === selectedId);
+  if (!category) {
+    categoryProductsTitle.textContent = 'Categoria non trovata';
+    return;
+  }
+
+  categoryProductsTitle.textContent = category.name;
+  const categoryProducts = category.productIds
+    .map((productId) => productMap.get(productId))
+    .filter(Boolean);
+  categoryGrid.innerHTML = renderProductCards(categoryProducts);
 }
 
 function openProductPreview(product) {
@@ -373,7 +599,11 @@ if (productPreview) {
 
 function drawWishlist() {
   const list = document.querySelector('#wishlist-items');
-  if (!list) return;
+  const wishCount = document.querySelector('#wish-count');
+  const totalQuantity = wishlist.reduce((sum, item) => sum + item.quantity, 0);
+
+  if (wishCount) wishCount.textContent = String(totalQuantity);
+  setStoredValue('pamWishlist', wishlist);
 
   const items = wishlist
     .map(({ id, quantity }) => {
@@ -382,10 +612,9 @@ function drawWishlist() {
     })
     .filter(Boolean);
   const total = items.reduce((sum, item) => sum + Number(item.amount) * item.quantity, 0);
-  const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
   const totalBox = document.querySelector('#wishlist-total-price');
 
-  if (!totalBox) {
+  if (!totalBox && list) {
     const card = list.parentElement;
     if (card) {
       const summary = document.createElement('div');
@@ -401,43 +630,44 @@ function drawWishlist() {
   }
 
   const updatedTotalBox = document.querySelector('#wishlist-total-price');
-  const wishCount = document.querySelector('#wish-count');
   const totalItems = document.querySelector('#total-items');
 
-  if (wishCount) wishCount.textContent = String(totalQuantity);
   if (totalItems) totalItems.textContent = String(totalQuantity);
   if (updatedTotalBox) {
     updatedTotalBox.textContent = formatPrice(total);
   }
 
-  list.innerHTML = items.length
-    ? items.map((p) => `
-        <div class="wish-row ${isSoldOut(p.id) ? 'sold-out-item' : ''}">
-          <img src="${p.image}" alt="" data-product-id="${p.id}">
-          <div class="wish-product-info">
-            <strong>${p.name}</strong><small>${p.kind}</small>
-            ${isSoldOut(p.id) ? '<span class="wishlist-soldout">Sold Out</span>' : ''}
+  if (list) {
+    list.innerHTML = items.length
+      ? items.map((p) => `
+          <div class="wish-row ${isSoldOut(p.id) ? 'sold-out-item' : ''}">
+            <img src="${p.image}" alt="" data-product-id="${p.id}">
+            <div class="wish-product-info">
+              <strong>${p.name}</strong><small>${p.kind}</small>
+              ${isSoldOut(p.id) ? '<span class="wishlist-soldout">Sold Out</span>' : ''}
+            </div>
+            <div class="wish-item-footer">
+              ${p.id === multiQuantityProductId ? `
+                <div class="wish-quantity">
+                  <button type="button" data-decrease="${p.id}" aria-label="Riduci la quantità di ${p.name}">−</button>
+                  <span aria-label="Quantità: ${p.quantity}">${p.quantity}</span>
+                  <button type="button" data-increase="${p.id}" aria-label="Aumenta la quantità di ${p.name}">+</button>
+                </div>
+                <span class="wish-price">${p.price} × ${p.quantity} (${formatPrice(Number(p.amount) * p.quantity)})</span>
+              ` : `<span class="wish-price">${p.price}</span>`}
+            </div>
+            <button type="button" data-remove="${p.id}" aria-label="Rimuovi ${p.name} dalla wishlist">×</button>
           </div>
-          <div class="wish-item-footer">
-            ${p.id === multiQuantityProductId ? `
-              <div class="wish-quantity">
-                <button type="button" data-decrease="${p.id}" aria-label="Riduci la quantità di ${p.name}">−</button>
-                <span aria-label="Quantità: ${p.quantity}">${p.quantity}</span>
-                <button type="button" data-increase="${p.id}" aria-label="Aumenta la quantità di ${p.name}">+</button>
-              </div>
-              <span class="wish-price">${p.price} × ${p.quantity} (${formatPrice(Number(p.amount) * p.quantity)})</span>
-            ` : `<span class="wish-price">${p.price}</span>`}
-          </div>
-          <button type="button" data-remove="${p.id}" aria-label="Rimuovi ${p.name} dalla wishlist">×</button>
-        </div>
-      `).join('')
-    : '<p class="empty">La tua wishlist è ancora vuota.<br>Esplora le creazioni e aggiungi le tue preferite.</p>';
+        `).join('')
+      : '<p class="empty">La tua wishlist è ancora vuota.<br>Esplora le creazioni e aggiungi le tue preferite.</p>';
+  }
 
   if (productGrids.length) {
     document.querySelectorAll('.product-grid .wishlist-control').forEach((control) => {
       const product = productMap.get(control.dataset.controlId);
       const quantity = getWishlistQuantity(control.dataset.controlId);
       const isSelected = quantity > 0;
+      const name = product ? escapeHtml(product.name) : '';
 
       if (!product) return;
 
@@ -449,13 +679,12 @@ function drawWishlist() {
 
       control.innerHTML = isSelected
         ? product.id === multiQuantityProductId
-          ? `<span class="added-label">Aggiunto</span><div class="quantity-actions"><button class="quantity-increase" type="button" data-increase="${product.id}" aria-label="Aggiungi un altro ${product.name}">+</button><span class="quantity-counter" aria-label="Quantità: ${quantity}">${quantity}</span><button class="quantity-decrease" type="button" data-decrease="${product.id}" aria-label="Riduci la quantità di ${product.name}">−</button></div>`
-          : `<span class="added-label">Aggiunto</span><button class="remove-from-wishlist" type="button" data-remove="${product.id}" aria-label="Rimuovi ${product.name} dalla wishlist"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M10 11v6m4-6v6M6 7l1 14h10l1-14M9 7V4h6v3"/></svg></button>`
-        : `<button class="add" data-id="${product.id}" aria-label="Aggiungi ${product.name} alla wishlist">+</button>`;
+          ? `<span class="added-label">Aggiunto</span><div class="quantity-actions"><button class="quantity-increase" type="button" data-increase="${product.id}" aria-label="Aggiungi un altro ${name}">+</button><span class="quantity-counter" aria-label="Quantità: ${quantity}">${quantity}</span><button class="quantity-decrease" type="button" data-decrease="${product.id}" aria-label="Riduci la quantità di ${name}">−</button></div>`
+          : `<span class="added-label">Aggiunto</span><button class="remove-from-wishlist" type="button" data-remove="${product.id}" aria-label="Rimuovi ${name} dalla wishlist"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M10 11v6m4-6v6M6 7l1 14h10l1-14M9 7V4h6v3"/></svg></button>`
+        : `<button class="add" data-id="${product.id}" aria-label="Aggiungi ${name} alla wishlist">+</button>`;
     });
   }
 
-  setStoredValue('pamWishlist', wishlist);
 }
 
 const wishlistList = document.querySelector('#wishlist-items');
@@ -604,6 +833,7 @@ const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
 
 drawProducts();
+drawSelectedCategory();
 drawWishlist();
 
 for (const productId of soldOutProductIds) {

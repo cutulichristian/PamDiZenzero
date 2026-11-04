@@ -11,12 +11,35 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Pam di Zenzero — mercatino natalizio e creazioni fatte a mano." />
-    <title>Pam di Zenzero · Mercatino natalizio</title>
+    <meta name="description" content="Pam di Zenzero: mercatino natalizio di decorazioni e creazioni artigianali fatte a mano con cura." />
+    <link rel="canonical" href="https://pamdizenzero.it/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:site_name" content="Pam di Zenzero" />
+    <meta property="og:title" content="Pam di Zenzero | Creazioni natalizie artigianali" />
+    <meta property="og:description" content="Decorazioni e piccoli regali natalizi creati a mano da Pam di Zenzero." />
+    <meta property="og:url" content="https://pamdizenzero.it/" />
+    <title>Pam di Zenzero | Creazioni natalizie artigianali</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Pam di Zenzero",
+        "alternateName": "pamdizenzero",
+        "url": "https://pamdizenzero.it/",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pam di Zenzero",
+          "alternateName": "pamdizenzero",
+          "url": "https://pamdizenzero.it/",
+          "logo": "https://pamdizenzero.it/assets/logo-pam-di-zenzero.png"
+        }
+      }
+    </script>
     <link rel="icon" type="image/png" href="assets/logo-pam-di-zenzero.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <style>.product-info .price{margin-top:7px;color:#8a2e0e;font-size:14px;font-weight:600}</style>
   </head>
@@ -32,15 +55,22 @@
 
     <main>
       <section class="hero" id="home">
-        <div class="hero-copy"><p class="eyebrow">Mercatino natalizio · fatto a mano</p><h1>Tanti lavoretti di Natale<br /><em>fatti con cura</em></h1><p class="intro">Decorazioni e piccoli regali creati a mano per la casa, la tavola e le persone a cui vuoi bene.</p><a class="button" href="#galleria">Guarda le creazioni <span>→</span></a></div>
+        <div class="hero-copy"><p class="eyebrow">Mercatino natalizio · fatto a mano</p><h1>Tanti lavoretti di Natale<br /><em>fatti con cura</em></h1><p class="intro">Decorazioni e piccoli regali creati a mano per la casa, la tavola e le persone a cui vuoi bene.</p><div class="hero-actions"><a class="button" href="#galleria">Guarda le creazioni <span>→</span></a><a class="button" href="categorie.html">Categorie <span>→</span></a></div></div>
       </section>
 
       <section class="gallery section" id="galleria">
         <div class="section-heading"><div><p class="eyebrow">Il piccolo mercatino</p><h2>Creazioni da scegliere<br />con gli occhi e col cuore</h2></div><p>Una grande collezione natalizia tutta da scoprire.</p></div>
         <div class="featured-products" id="featured-products" hidden>
-          <div class="section-heading"><div><p class="eyebrow">La nostra selezione</p><h2>In evidenza</h2></div></div>
-          <div class="product-grid" id="featured-product-grid" aria-label="Prodotti in evidenza, scorri orizzontalmente"></div>
+          <div class="featured-heading">
+            <div class="section-heading"><div><p class="eyebrow">La nostra selezione</p><h2>In evidenza</h2></div></div>
+            <div class="carousel-controls" aria-label="Controlli carosello">
+              <button class="carousel-control" type="button" data-carousel-direction="-1" aria-label="Mostra i prodotti in evidenza precedenti">←</button>
+              <button class="carousel-control" type="button" data-carousel-direction="1" aria-label="Mostra i prodotti in evidenza successivi">→</button>
+            </div>
+          </div>
+          <div class="product-grid featured-carousel" id="featured-product-grid" aria-label="Prodotti in evidenza" tabindex="0"></div>
         </div>
+        <div class="section-heading all-creations-heading"><div><p class="eyebrow">Il catalogo completo</p><h2>Tutte le creazioni</h2></div></div>
         <div class="product-grid" id="product-grid"></div>
       </section>
 
