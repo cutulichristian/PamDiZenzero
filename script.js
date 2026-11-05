@@ -82,6 +82,11 @@ const products = [
   { id: 'lanterninacoto', name: 'Lanterna in legno illuminata', kind: 'Decorazioni natalizie', price: '€ 10,00', amount: 10, image: 'assets/lanterninacoto.JPG' },
   { id: 'decorazionialbero', name: 'Decorazioni per l\'Albero di Natale', kind: 'Decorazioni natalizie da appendere', price: '€ 2,00 CAD', amount: 2, image: 'assets/decorazionialbero.JPG' },
   { id: 'diamondappenderebabbo', name: 'Diamont Painting "Babbo Natale"', kind: 'Decorazione da appendere', price: '€ 7,00', amount: 7, image: 'assets/diamondappenderebabbo.JPG' },
+  { id: 'diamontappesoalbero', name: 'Diamont Painting Albero di Natale', kind: 'Decorazione da appendere', price: '€ 7,00', amount: 7, image: 'assets/diamontappesoalbero.JPG' },
+  { id: 'diamontappoggioalbero', name: 'Diamont Painting Albero di Natale', kind: 'Decorazione con appoggio', price: '€ 12,00', amount: 12, image: 'assets/diamontappoggioalbero.JPG' },
+  { id: 'diamontappoggiopaesagg', name: 'Diamont Painting Paesaggio Natalizio', kind: 'Decorazione con appoggio', price: '€ 12,00', amount: 12, image: 'assets/diamontappoggiopaesagg.JPG' },
+  { id: 'diamontquadroslitta', name: 'Diamont Painting Slitta di Natale', kind: 'Quadro decorativo', price: '€ 11,00', amount: 11, image: 'assets/diamontquadroslitta.JPG' },
+  { id: 'nativitàsalvadanaio', name: 'Natività con luci', kind: 'Decorazioni natalizie', price: '€ 10,00', amount: 10, image: 'assets/nativitàsalvadanaio.JPG' },
 
 ];
 
@@ -119,6 +124,10 @@ const categories = [
       'bugliettobabboalbero',
       'caminettoillu',
       'diamondappenderebabbo',
+      'diamontappesoalbero',
+      'diamontappoggioalbero',
+      'diamontappoggiopaesagg',
+      'diamontquadroslitta',
       'paintingincorniciatopaesaggio',
       'paintingincorniciatotreno',
       'paintingincorniciatoorso',
@@ -207,7 +216,8 @@ const categories = [
       'alberopeloso',
       'alberoazzurro',
       'alberotiffany',
-      'alberobiancos'
+      'alberobiancos',
+      'nativitàsalvadanaio'
     ]
   }
 ];
