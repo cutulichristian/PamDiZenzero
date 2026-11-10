@@ -1,9 +1,10 @@
 const products = [
   { id: 'diamontPaintingBabboAppeso', name: 'Diamont Painting "Babbo Natale"', kind: 'Decorazione da appendere', price: '€ 11,00', amount: 11, image: 'assets/babboappeso.jpg' },
-  { id: 'diamontPaintingBabboBase', name: 'Diamont Painting "Babbo Natale"', kind: 'Decorazione con base', price: '€ 14,00', amount: 14, image: 'assets/babbobase.jpg' },
-  { id: 'diamontPaintingMulino', name: 'Diamont Painting "Mulino"', kind: 'Decorazione con base', price: '€ 14,00', amount: 14, image: 'assets/mulino.jpg' },
+  { id: 'diamontPaintingBabboBase', name: 'Diamont Painting "Babbo Natale"', kind: 'Decorazione con base', price: '€ 13,00', amount: 13, image: 'assets/babbobase.jpg' },
+  { id: 'diamontPaintingMulino', name: 'Diamont Painting "Mulino"', kind: 'Decorazione con base', price: '€ 13,00', amount: 13, image: 'assets/mulino.jpg' },
   { id: 'bigliettoRenna', name: 'Biglietto Diamont Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettorenna.jpg' },
   { id: 'bigliettoSclaus', name: 'Biglietto Diamont Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettosclaus.jpg' },
+  { id: 'biglietticoloratipiccoli', name: 'Biglietti colorati piccoli', kind: 'Biglietti da regalare', price: '€ 2,00 CAD', amount: 2, image: 'assets/biglietticoloratipiccoli.JPG' },
   { id: 'babboarco', name: 'Villaggio di Babbo Natale con arco', kind: 'Decorazione natalizia', price: '€ 35,00', amount: 35, image: 'assets/babboarco.jpg' },
   { id: 'villaggiofeltro', name: 'Villaggio in feltro', kind: 'Decorazione natalizia', price: '€ 15,00', amount: 15, image: 'assets/villaggiofeltro.jpg' },
   { id: 'lanternafeltro', name: 'Lanterna in feltro con lumino', kind: 'Decorazione natalizia', price: '€ 5,00', amount: 5, image: 'assets/lanternafeltro.jpg' },
@@ -21,9 +22,9 @@ const products = [
   { id: 'strega', name: 'Strega in feltro', kind: 'Decorazione natalizia', price: '€ 13,00', amount: 13, image: 'assets/strega.jpg' },
   { id: 'villaggiofeltrolungo', name: 'Villaggio in feltro', kind: 'Villaggio natalizio', price: '€ 16,00', amount: 16, image: 'assets/villaggiofeltrolungo.jpg' },
   { id: 'villaggiotondorami', name: 'Villaggio natalizio', kind: 'Villaggio natalizio', price: '€ 14,00', amount: 14, image: 'assets/villaggiotondorami.jpg' },
-  { id: 'diamondpandispagna', name: 'Diamond Painting Casetta', kind: 'Decorazione con base led', price: '€ 15,00', amount: 15, image: 'assets/pandispagnaled.png' },
-  { id: 'diamondrenna', name: 'Diamond Painting Renna', kind: 'Decorazione con base led', price: '€ 15,00', amount: 15, image: 'assets/rennaleddiamond.png' },
-  { id: 'cornicebabbodiamond', name: 'Quadro Diamond Painting Babbo Natale', kind: 'Quadro', price: '€ 20,00', amount: 20, image: 'assets/babbodiamond.jpg' },
+  { id: 'diamondpandispagna', name: 'Diamond Painting Casetta', kind: 'Decorazione con base led', price: '€ 13,00', amount: 13, image: 'assets/pandispagnaled.png' },
+  { id: 'diamondrenna', name: 'Diamond Painting Renna', kind: 'Decorazione con base led', price: '€ 13,00', amount: 13, image: 'assets/rennaleddiamond.png' },
+  { id: 'cornicebabbodiamond', name: 'Quadro Diamond Painting Babbo Natale', kind: 'Quadro', price: '€ 14,00', amount: 14, image: 'assets/babbodiamond.jpg' },
   { id: 'bigliettoalberobabbo', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettoalberobabbo.jpg' },
   { id: 'bigliettobabboslitta', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettobabboslitta.jpg' },
   { id: 'bigliettorennababbo', name: 'Biglietto Diamond Painting', kind: 'Biglietti da regalare', price: '€ 3,50', amount: 3.5, image: 'assets/bigliettorennababbo.jpg' },
@@ -46,10 +47,10 @@ const products = [
   { id: 'corniceverdebbbo', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/corniceverdebbbo.jpg' },
   { id: 'cornicebiancababbo', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicebiancababbo.jpg' },
   { id: 'cornicerossababbo', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicerossababbo.jpg' },
-  { id: 'paintingincorniciatopaesaggio', name: 'Cornice Diamont Painting', kind: 'Decorazioni natalizie', price: '€ 13,00', amount: 13, image: 'assets/paintingincorniciatopaesaggio.jpg' },
-  { id: 'paintingincorniciatotreno', name: 'Cornice Diamont Painting', kind: 'Decorazioni natalizie', price: '€ 13,00', amount: 13, image: 'assets/paintingincorniciatotreno.jpg' },
-  { id: 'paintingincorniciatoorso', name: 'Cornice Diamont Painting', kind: 'Decorazioni natalizie', price: '€ 13,00', amount: 13, image: 'assets/paintingincorniciatoorso.jpg' },
-  { id: 'cornicetopinidiamond', name: 'Quadro Diamond Painting Topolini', kind: 'Quadro', price: '€ 20,00', amount: 20, image: 'assets/topinidiamond.jpg' },
+  { id: 'paintingincorniciatopaesaggio', name: 'Cornice Diamont Painting', kind: 'Decorazioni natalizie', price: '€ 14,00', amount: 14, image: 'assets/paintingincorniciatopaesaggio.jpg' },
+  { id: 'paintingincorniciatotreno', name: 'Cornice Diamont Painting', kind: 'Decorazioni natalizie', price: '€ 14,00', amount: 14, image: 'assets/paintingincorniciatotreno.jpg' },
+  { id: 'paintingincorniciatoorso', name: 'Cornice Diamont Painting', kind: 'Decorazioni natalizie', price: '€ 14,00', amount: 14, image: 'assets/paintingincorniciatoorso.jpg' },
+  { id: 'cornicetopinidiamond', name: 'Quadro Diamond Painting Topolini', kind: 'Quadro', price: '€ 14,00', amount: 14, image: 'assets/topinidiamond.jpg' },
   { id: 'cofanettofotoS', name: 'Stanza decorata con portafoto', kind: 'Decorazioni natalizie', price: '€ 15,00', amount: 15, image: 'assets/cofanettofotoS.JPG' },
   { id: 'cofanettofotoM', name: 'Stanza decorata con portafoto', kind: 'Decorazioni natalizie', price: '€ 18,00', amount: 18, image: 'assets/cofanettofotoM.JPG' },
   { id: 'grinch', name: 'Stanza decorata del Grinch', kind: 'Decorazioni natalizie', price: '€ 35,00', amount: 35, image: 'assets/grinch.PNG' },
@@ -69,7 +70,7 @@ const products = [
   { id: 'cornicelfetto', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicelfetto.PNG' },
   { id: 'villaggionelegno', name: 'Paesaggio in legno natalizio illuminato', kind: 'Decorazioni natalizie', price: '€ 45,00', amount: 45, image: 'assets/villaggionelegno.JPG' },
   { id: 'casetta', name: 'Casetta', kind: 'Decorazione natalizia', price: '€ 50,00', amount: 50, image: 'assets/casettinaA.JPG', images: ['assets/casettinaA.JPG', 'assets/casettinaB.JPG'] },
-  { id: 'caminettoillu', name: 'Diamont Painting "Camino"', kind: 'Decorazione con base', price: '€ 15,00', amount: 15, image: 'assets/caminettoillu.JPG' },
+  { id: 'caminettoillu', name: 'Diamont Painting "Camino"', kind: 'Decorazione con base', price: '€ 13,00', amount: 13, image: 'assets/caminettoillu.JPG' },
   { id: 'cornicefollettino', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicefollettino.JPG' },
   { id: 'corniceverdescii', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/corniceverdescii.JPG' },
   { id: 'cornicerossaeverde', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicerossaeverde.JPG' },
@@ -80,6 +81,7 @@ const products = [
   { id: 'carillongiostra', name: 'Carillon in legno', kind: 'Carillon rotante con musica natalizia', price: '€ 15,00', amount: 15, image: 'assets/carillongiostra.JPG' },
   { id: 'lanterninaarchetta', name: 'Lanterna in legno illuminata', kind: 'Decorazioni natalizie', price: '€ 10,00', amount: 10, image: 'assets/lanterninaarchetta.JPG' },
   { id: 'lanterninacoto', name: 'Lanterna in legno illuminata', kind: 'Decorazioni natalizie', price: '€ 10,00', amount: 10, image: 'assets/lanterninacoto.JPG' },
+  { id: 'pallinelunghe', name: 'Decorazioni per l\'Albero di Natale', kind: 'Decorazioni natalizie da appendere', price: '€ 2,00 CAD', amount: 2, image: 'assets/pallinelunghe.JPG' },
   { id: 'decorazionialbero', name: 'Decorazioni per l\'Albero di Natale', kind: 'Decorazioni natalizie da appendere', price: '€ 2,00 CAD', amount: 2, image: 'assets/decorazionialbero.JPG' },
   { id: 'diamondappenderebabbo', name: 'Diamont Painting "Babbo Natale"', kind: 'Decorazione da appendere', price: '€ 7,00', amount: 7, image: 'assets/diamondappenderebabbo.JPG' },
   { id: 'diamontappesoalbero', name: 'Diamont Painting Albero di Natale', kind: 'Decorazione da appendere', price: '€ 7,00', amount: 7, image: 'assets/diamontappesoalbero.JPG' },
@@ -87,6 +89,13 @@ const products = [
   { id: 'diamontappoggiopaesagg', name: 'Diamont Painting Paesaggio Natalizio', kind: 'Decorazione con appoggio', price: '€ 12,00', amount: 12, image: 'assets/diamontappoggiopaesagg.JPG' },
   { id: 'diamontquadroslitta', name: 'Diamont Painting Slitta di Natale', kind: 'Quadro decorativo', price: '€ 11,00', amount: 11, image: 'assets/diamontquadroslitta.JPG' },
   { id: 'nativitàsalvadanaio', name: 'Natività con luci', kind: 'Decorazioni natalizie', price: '€ 10,00', amount: 10, image: 'assets/nativitàsalvadanaio.JPG' },
+  { id: 'diamondbabboseduto', name: 'Diamont Painting Babbo Natale', kind: 'Decorazione con base', price: '€ 13,00', amount: 13, image: 'assets/diamondbabboseduto.JPG' },
+  { id: 'diamondbabbopallona', name: 'Diamont Painting Babbo Natale', kind: 'Decorazione con base', price: '€ 13,00', amount: 13, image: 'assets/diamondbabbopallona.JPG' },
+  { id: 'diamondbabboaddormentato', name: 'Diamont Painting Babbo Natale', kind: 'Decorazione da appendere', price: '€ 11,00', amount: 11, image: 'assets/diamondbabboaddormentato.JPG' },
+  { id: 'diamondincorniciatobabboalbero', name: 'Cornice Diamont Painting di Natale', kind: 'Decorazioe natalizia', price: '€ 14,00', amount: 14, image: 'assets/diamondincorniciatobabboalbero.JPG' },
+  { id: 'diamondquadrobabboalbero', name: 'Diamont Painting di Natale', kind: 'Quadro decorativo', price: '€ 11,00', amount: 11, image: 'assets/diamondquadrobabboalbero.JPG' },
+  { id: 'diamondquadrobabboslitta', name: 'Diamont Painting di Natale', kind: 'Quadro decorativo', price: '€ 11,00', amount: 11, image: 'assets/diamondquadrobabboslitta.JPG' },
+  { id: 'villaggioelfi', name: 'Villaggio degli Elfi in legno illuminato', kind: 'Decorazioni natalizie', price: '€ 35,00', amount: 35, image: 'assets/villaggioelfi.JPG' },
 
 ];
 
@@ -124,10 +133,15 @@ const categories = [
       'bugliettobabboalbero',
       'caminettoillu',
       'diamondappenderebabbo',
+      'diamondbabboseduto',
       'diamontappesoalbero',
       'diamontappoggioalbero',
       'diamontappoggiopaesagg',
       'diamontquadroslitta',
+      'diamondquadrobabboalbero',
+      'diamondquadrobabboslitta',
+      'biglietticoloratipiccoli',
+      'diamondincorniciatobabboalbero',
       'paintingincorniciatopaesaggio',
       'paintingincorniciatotreno',
       'paintingincorniciatoorso',
@@ -146,7 +160,9 @@ const categories = [
       'carillongiostra',
       'lanterninaarchetta',
       'lanterninacoto',
+      'pallinelunghe',
       'decorazionialbero',
+      'villaggioelfi',
       'babboarco',
       'slittababboxl',
       'babboarcoceppo',
@@ -187,6 +203,7 @@ const categories = [
       'babboarcoceppos',
       'babbocepporenna',
       'villaggiotondorami',
+      'villaggioelfi',
       'paesaggiolegno',
       'villaggionelegno'
     ]
@@ -269,18 +286,35 @@ function setStoredValue(key, value) {
 }
 
 const storedWishlist = getStoredValue('pamWishlist', []);
-const multiQuantityProductId = 'decorazionialbero';
+const multiQuantityProductIds = new Set(['decorazionialbero', 'pallinelunghe']);
+const multiQuantityLimit = 5;
+const colorVariantProductId = 'biglietticoloratipiccoli';
+const colorVariants = [
+  { id: 'rosa', name: 'Rosa' },
+  { id: 'rosso', name: 'Rosso' },
+  { id: 'bianco', name: 'Bianco' },
+  { id: 'verde', name: 'Verde' }
+];
+let colorPickerOpen = false;
 let wishlist = Array.isArray(storedWishlist)
   ? storedWishlist.reduce((items, entry) => {
     const id = typeof entry === 'string' ? entry : entry?.id;
+    if (!productMap.has(id)) return items;
+
+    if (id === colorVariantProductId) {
+      const color = entry?.color;
+      if (!colorVariants.some((variant) => variant.id === color) || items.some((item) => item.id === id && item.color === color)) return items;
+      items.push({ id, color, quantity: 1 });
+      return items;
+    }
+
     const storedQuantity = typeof entry === 'string' ? 1 : Number(entry?.quantity);
-    const quantity = id === multiQuantityProductId ? storedQuantity : 1;
-    if (!productMap.has(id) || !Number.isSafeInteger(quantity) || quantity < 1) return items;
+    const quantity = multiQuantityProductIds.has(id) ? Math.min(storedQuantity, multiQuantityLimit) : 1;
+    if (!Number.isSafeInteger(quantity) || quantity < 1) return items;
 
     const existing = items.find((item) => item.id === id);
     if (existing) {
-      const combinedQuantity = existing.quantity + quantity;
-      if (Number.isSafeInteger(combinedQuantity)) existing.quantity = combinedQuantity;
+      existing.quantity = Math.min(existing.quantity + quantity, multiQuantityLimit);
     } else {
       items.push({ id, quantity });
     }
@@ -289,19 +323,36 @@ let wishlist = Array.isArray(storedWishlist)
   : [];
 
 function getWishlistQuantity(productId) {
-  return wishlist.find((item) => item.id === productId)?.quantity ?? 0;
+  return wishlist
+    .filter((item) => item.id === productId)
+    .reduce((quantity, item) => quantity + item.quantity, 0);
 }
 
 function changeWishlistQuantity(productId, change) {
   if (!productMap.has(productId) || !Number.isSafeInteger(change)) return;
+  if (productId === colorVariantProductId) {
+    colorPickerOpen = true;
+    drawWishlist();
+    return;
+  }
   const currentQuantity = getWishlistQuantity(productId);
-  if (productId !== multiQuantityProductId && currentQuantity > 0) return;
-  const quantity = productId === multiQuantityProductId
-    ? currentQuantity + change
+  if (!multiQuantityProductIds.has(productId) && currentQuantity > 0) return;
+  const quantity = multiQuantityProductIds.has(productId)
+    ? Math.min(currentQuantity + change, multiQuantityLimit)
     : Math.min(currentQuantity + change, 1);
   if (!Number.isSafeInteger(quantity)) return;
   wishlist = wishlist.filter((item) => item.id !== productId);
   if (quantity > 0) wishlist.push({ id: productId, quantity });
+  drawWishlist();
+}
+
+function toggleColorVariant(color) {
+  if (!colorVariants.some((variant) => variant.id === color)) return;
+
+  const existing = wishlist.find((item) => item.id === colorVariantProductId && item.color === color);
+  wishlist = existing
+    ? wishlist.filter((item) => item !== existing)
+    : [...wishlist, { id: colorVariantProductId, color, quantity: 1 }];
   drawWishlist();
 }
 
@@ -558,9 +609,22 @@ function openProductPreview(product) {
 
 productGrids.forEach((productGrid) => {
   productGrid.addEventListener('click', (e) => {
+    const colorToggle = e.target.closest('[data-color-toggle]');
+    const colorClose = e.target.closest('[data-color-close]');
     const addButton = e.target.closest('.add, .quantity-increase');
     const decreaseButton = e.target.closest('.quantity-decrease');
     const removeButton = e.target.closest('.remove-from-wishlist');
+
+    if (colorToggle) {
+      toggleColorVariant(colorToggle.dataset.colorToggle);
+      return;
+    }
+
+    if (colorClose) {
+      colorPickerOpen = false;
+      drawWishlist();
+      return;
+    }
 
     if (removeButton) {
       removeFromWishlist(removeButton.dataset.remove);
@@ -616,9 +680,11 @@ function drawWishlist() {
   setStoredValue('pamWishlist', wishlist);
 
   const items = wishlist
-    .map(({ id, quantity }) => {
+    .map(({ id, quantity, color }) => {
       const product = productMap.get(id);
-      return product ? { ...product, quantity: id === multiQuantityProductId ? quantity : 1 } : null;
+      return product
+        ? { ...product, quantity: multiQuantityProductIds.has(id) ? quantity : 1, color }
+        : null;
     })
     .filter(Boolean);
   const total = items.reduce((sum, item) => sum + Number(item.amount) * item.quantity, 0);
@@ -653,20 +719,22 @@ function drawWishlist() {
           <div class="wish-row ${isSoldOut(p.id) ? 'sold-out-item' : ''}">
             <img src="${p.image}" alt="" data-product-id="${p.id}">
             <div class="wish-product-info">
-              <strong>${p.name}</strong><small>${p.kind}</small>
+              <strong>${p.name}${p.color ? ` — ${colorVariants.find((variant) => variant.id === p.color).name}` : ''}</strong><small>${p.kind}</small>
               ${isSoldOut(p.id) ? '<span class="wishlist-soldout">Sold Out</span>' : ''}
             </div>
             <div class="wish-item-footer">
-              ${p.id === multiQuantityProductId ? `
+              ${multiQuantityProductIds.has(p.id) ? `
                 <div class="wish-quantity">
                   <button type="button" data-decrease="${p.id}" aria-label="Riduci la quantità di ${p.name}">−</button>
                   <span aria-label="Quantità: ${p.quantity}">${p.quantity}</span>
-                  <button type="button" data-increase="${p.id}" aria-label="Aumenta la quantità di ${p.name}">+</button>
+                  <button type="button" data-increase="${p.id}" aria-label="Aumenta la quantità di ${p.name}" ${p.quantity >= multiQuantityLimit ? 'disabled' : ''}>+</button>
                 </div>
                 <span class="wish-price">${p.price} × ${p.quantity} (${formatPrice(Number(p.amount) * p.quantity)})</span>
               ` : `<span class="wish-price">${p.price}</span>`}
             </div>
-            <button type="button" data-remove="${p.id}" aria-label="Rimuovi ${p.name} dalla wishlist">×</button>
+            ${p.color
+              ? `<button type="button" data-color-remove="${p.color}" aria-label="Rimuovi ${p.name} ${colorVariants.find((variant) => variant.id === p.color).name} dalla wishlist">×</button>`
+              : `<button type="button" data-remove="${p.id}" aria-label="Rimuovi ${p.name} dalla wishlist">×</button>`}
           </div>
         `).join('')
       : '<p class="empty">La tua wishlist è ancora vuota.<br>Esplora le creazioni e aggiungi le tue preferite.</p>';
@@ -678,18 +746,31 @@ function drawWishlist() {
       const quantity = getWishlistQuantity(control.dataset.controlId);
       const isSelected = quantity > 0;
       const name = product ? escapeHtml(product.name) : '';
+      const isColorVariant = product?.id === colorVariantProductId;
+      const selectedColors = isColorVariant
+        ? new Set(wishlist.filter((item) => item.id === colorVariantProductId).map((item) => item.color))
+        : new Set();
+      const showColorPicker = isColorVariant && (colorPickerOpen || isSelected);
 
       if (!product) return;
 
       const footer = control.closest('.product-footer');
       if (footer) {
-        footer.classList.toggle('is-selected', isSelected);
-        footer.classList.toggle('has-quantity', product.id === multiQuantityProductId);
+        footer.classList.toggle('is-selected', isSelected || showColorPicker);
+        footer.classList.toggle('has-quantity', multiQuantityProductIds.has(product.id) || isColorVariant);
+        footer.classList.toggle('has-color-variants', showColorPicker);
       }
 
-      control.innerHTML = isSelected
-        ? product.id === multiQuantityProductId
-          ? `<span class="added-label">Aggiunto</span><div class="quantity-actions"><button class="quantity-increase" type="button" data-increase="${product.id}" aria-label="Aggiungi un altro ${name}">+</button><span class="quantity-counter" aria-label="Quantità: ${quantity}">${quantity}</span><button class="quantity-decrease" type="button" data-decrease="${product.id}" aria-label="Riduci la quantità di ${name}">−</button></div>`
+      control.innerHTML = isColorVariant
+        ? showColorPicker
+          ? `<span class="added-label">Colori selezionati: ${selectedColors.size}/4</span><div class="color-variant-picker" role="group" aria-label="Scegli i colori disponibili">${colorVariants.map((variant) => {
+            const isColorSelected = selectedColors.has(variant.id);
+            return `<button type="button" class="color-variant-option${isColorSelected ? ' is-selected' : ''}" data-color-toggle="${variant.id}" aria-pressed="${isColorSelected}">${variant.name}${isColorSelected ? ' · Aggiunto' : ''}</button>`;
+          }).join('')}</div><button type="button" class="color-variant-close" data-color-close>Chiudi elenco colori</button>`
+          : `<button class="add" data-id="${product.id}" aria-label="Scegli il colore di ${name}">+</button>`
+        : isSelected
+        ? multiQuantityProductIds.has(product.id)
+          ? `<span class="added-label">Aggiunto</span><div class="quantity-actions"><button class="quantity-increase" type="button" data-increase="${product.id}" aria-label="Aggiungi un altro ${name}" ${quantity >= multiQuantityLimit ? 'disabled' : ''}>+</button><span class="quantity-counter" aria-label="Quantità: ${quantity}">${quantity}</span><button class="quantity-decrease" type="button" data-decrease="${product.id}" aria-label="Riduci la quantità di ${name}">−</button></div>`
           : `<span class="added-label">Aggiunto</span><button class="remove-from-wishlist" type="button" data-remove="${product.id}" aria-label="Rimuovi ${name} dalla wishlist"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M10 11v6m4-6v6M6 7l1 14h10l1-14M9 7V4h6v3"/></svg></button>`
         : `<button class="add" data-id="${product.id}" aria-label="Aggiungi ${name} alla wishlist">+</button>`;
     });
@@ -701,10 +782,12 @@ const wishlistList = document.querySelector('#wishlist-items');
 if (wishlistList) {
   wishlistList.addEventListener('click', (e) => {
     const removeButton = e.target.closest('[data-remove]');
+    const colorRemoveButton = e.target.closest('[data-color-remove]');
     const increaseButton = e.target.closest('[data-increase]');
     const decreaseButton = e.target.closest('[data-decrease]');
 
-    if (removeButton) removeFromWishlist(removeButton.dataset.remove);
+    if (colorRemoveButton) toggleColorVariant(colorRemoveButton.dataset.colorRemove);
+    else if (removeButton) removeFromWishlist(removeButton.dataset.remove);
     else if (increaseButton) changeWishlistQuantity(increaseButton.dataset.increase, 1);
     else if (decreaseButton) changeWishlistQuantity(decreaseButton.dataset.decrease, -1);
   });
@@ -723,9 +806,11 @@ if (bookingForm) {
 
     const data = new FormData(e.target);
     const requestedItems = wishlist
-      .map(({ id, quantity }) => {
+      .map(({ id, quantity, color }) => {
         const product = productMap.get(id);
-        return product ? { ...product, quantity: id === multiQuantityProductId ? quantity : 1 } : null;
+        return product
+          ? { ...product, quantity: multiQuantityProductIds.has(id) ? quantity : 1, color }
+          : null;
       })
       .filter(Boolean);
     const contactDetails = {
@@ -736,9 +821,14 @@ if (bookingForm) {
     };
     data.append('wishlist', requestedItems.map((product) => {
       const quantity = product.quantity > 1 ? ` × ${product.quantity}` : '';
-      return `${product.name}${quantity}${isSoldOut(product.id) ? ' (Sold Out)' : ''}`;
+      const color = product.color ? ` — ${colorVariants.find((variant) => variant.id === product.color).name}` : '';
+      return `${product.name}${color}${quantity}${isSoldOut(product.id) ? ' (Sold Out)' : ''}`;
     }).filter(Boolean).join(', '));
-    data.append('id', wishlist.map(({ id, quantity }) => `${id}${id === multiQuantityProductId && quantity > 1 ? ` × ${quantity}` : ''}`).join(', '));
+    data.append('id', wishlist.map(({ id, quantity, color }) => {
+      const colorLabel = color ? ` (${colorVariants.find((variant) => variant.id === color).name})` : '';
+      const quantityLabel = multiQuantityProductIds.has(id) && quantity > 1 ? ` × ${quantity}` : '';
+      return `${id}${colorLabel}${quantityLabel}`;
+    }).join(', '));
     data.append('_subject', 'Nuova richiesta dal sito Pam di Zenzero');
     data.append('_template', 'table');
 
@@ -760,6 +850,7 @@ if (bookingForm) {
       if (status) status.textContent = 'Grazie! La tua richiesta è stata inviata all’atelier.';
       e.target.reset();
       wishlist = [];
+      colorPickerOpen = false;
       drawWishlist();
       showRequestSummary(requestedItems, contactDetails);
     } catch {
@@ -784,8 +875,9 @@ function showRequestSummary(items, contactDetails) {
   if (itemList) {
     itemList.replaceChildren(...items.map((item) => {
       const listItem = document.createElement('li');
-      const quantity = item.id === multiQuantityProductId && item.quantity > 1 ? ` × ${item.quantity}` : '';
-      listItem.innerHTML = `<span>${item.name}${quantity}</span><strong>${item.id === multiQuantityProductId ? formatPrice(Number(item.amount) * item.quantity) : item.price}</strong>`;
+      const quantity = multiQuantityProductIds.has(item.id) && item.quantity > 1 ? ` × ${item.quantity}` : '';
+      const color = item.color ? ` — ${colorVariants.find((variant) => variant.id === item.color).name}` : '';
+      listItem.innerHTML = `<span>${item.name}${color}${quantity}</span><strong>${multiQuantityProductIds.has(item.id) ? formatPrice(Number(item.amount) * item.quantity) : item.price}</strong>`;
       return listItem;
     }));
   }
