@@ -101,7 +101,7 @@ const products = [
   { id: 'cornice3', name: 'Cornice Diamont Painting', kind: 'Decorazioni natalizie', price: '€ 14,00', amount: 14, image: 'assets/cornice3.JPG' },
 
 ];
-X
+
 const productMap = new Map(products.map((product) => [product.id, product]));
 const categories = [
   {
