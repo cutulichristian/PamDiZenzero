@@ -96,12 +96,12 @@ const products = [
   { id: 'diamondquadrobabboalbero', name: 'Diamont Painting di Natale', kind: 'Quadro decorativo', price: '€ 11,00', amount: 11, image: 'assets/diamondquadrobabboalbero.JPG' },
   { id: 'diamondquadrobabboslitta', name: 'Diamont Painting di Natale', kind: 'Quadro decorativo', price: '€ 11,00', amount: 11, image: 'assets/diamondquadrobabboslitta.JPG' },
   { id: 'villaggioelfi', name: 'Villaggio degli Elfi in legno illuminato', kind: 'Decorazioni natalizie', price: '€ 35,00', amount: 35, image: 'assets/villaggioelfi.JPG' },
-  { id: 'cornice1', name: 'Cornice Diamont Painting', kind: 'Decorazioni natalizie', price: '€ 14,00', amount: 14, image: 'assets/cornice1.jpg' },
-  { id: 'cornice2', name: 'Cornice Diamont Painting', kind: 'Decorazioni natalizie', price: '€ 14,00', amount: 14, image: 'assets/cornice2.jpg' },
-  { id: 'cornice3', name: 'Cornice Diamont Painting', kind: 'Decorazioni natalizie', price: '€ 14,00', amount: 14, image: 'assets/cornice3.jpg' },
+  { id: 'cornice1', name: 'Cornice Diamont Painting', kind: 'Decorazioni natalizie', price: '€ 14,00', amount: 14, image: 'assets/cornice1.JPG' },
+  { id: 'cornice2', name: 'Cornice Diamont Painting', kind: 'Decorazioni natalizie', price: '€ 14,00', amount: 14, image: 'assets/cornice2.JPG' },
+  { id: 'cornice3', name: 'Cornice Diamont Painting', kind: 'Decorazioni natalizie', price: '€ 14,00', amount: 14, image: 'assets/cornice3.JPG' },
 
 ];
-
+X
 const productMap = new Map(products.map((product) => [product.id, product]));
 const categories = [
   {
