@@ -419,7 +419,10 @@ const soldOutProductIds = new Set([
   'bigliettobabboslitta',
   'bigliettoalberobabbo',
   'bigliettorennababbo',
-  'fuoriportarossoxl'
+  'fuoriportarossoxl',
+  'lanternafeltro',
+  'carillongiostra',
+  'diamondrenna',
 ]);
 
 function isSoldOut(productId) {
@@ -822,6 +825,18 @@ if (bookingForm) {
       telefono: data.get('telefono'),
       messaggio: data.get('messaggio')
     };
+    const receiptTotal = requestedItems.reduce((sum, product) => sum + Number(product.amount) * product.quantity, 0);
+    const receipt = requestedItems.map((product) => {
+      const color = product.color ? ` — ${colorVariants.find((variant) => variant.id === product.color).name}` : '';
+      const subtotal = Number(product.amount) * product.quantity;
+      return [
+        `ID: ${product.id}`,
+        `Nome: ${product.name}${color}`,
+        `Costo unitario: ${formatPrice(product.amount)}`,
+        `Quantità: ${product.quantity}`,
+        `Subtotale: ${formatPrice(subtotal)}`
+      ].join('\n');
+    }).join('\n\n');
     data.append('wishlist', requestedItems.map((product) => {
       const quantity = product.quantity > 1 ? ` × ${product.quantity}` : '';
       const color = product.color ? ` — ${colorVariants.find((variant) => variant.id === product.color).name}` : '';
@@ -832,6 +847,7 @@ if (bookingForm) {
       const quantityLabel = multiQuantityProductIds.has(id) && quantity > 1 ? ` × ${quantity}` : '';
       return `${id}${colorLabel}${quantityLabel}`;
     }).join(', '));
+    data.append('scontrino', `${receipt}\n\nTotale indicativo: ${formatPrice(receiptTotal)}`);
     data.append('_subject', 'Nuova richiesta dal sito Pam di Zenzero');
     data.append('_template', 'table');
 
