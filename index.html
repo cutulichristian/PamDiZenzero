@@ -40,7 +40,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=20261115-4" />
     <style>.product-info .price{margin-top:7px;color:#8a2e0e;font-size:14px;font-weight:600}</style>
   </head>
   <body>
@@ -52,6 +52,12 @@
       </nav>
       <a class="wish-link" href="#wishlist">Wishlist <span id="wish-count">0</span></a>
     </header>
+
+    <div class="scroll-banner" id="scroll-banner" aria-live="polite">
+      <span>Mercatino di Natale</span>
+      <strong>13 dicembre</strong>
+      <span>Cernusco Lombardone</span>
+    </div>
 
     <main>
       <section class="hero" id="home">
@@ -83,13 +89,13 @@
         <div>
           <p class="eyebrow">Vieni a trovarci</p>
           <h2>Dove trovarci?</h2>
-          <p>A Dicembre saremo al mercatino di Cernusco Lombardone</p>
-          <p class="placeholder-address">Vicino alla stazione di<br />Cernusco Lombardone (LC)</p>
+          <p><strong>Sabato 13 dicembre</strong> saremo nel Comune di Cernusco Lombardone.</p>
+          <p class="placeholder-address">Mercatino natalizio<br />Comune di Cernusco Lombardone (LC)</p>
         </div>
         <div class="map-card">
           <iframe
-            title="Mappa della stazione di Cernusco Lombardone"
-            src="https://www.google.com/maps?q=Stazione%20di%20Cernusco%20Lombardone&output=embed"
+            title="Mappa del Comune di Cernusco Lombardone"
+            src="https://www.google.com/maps?q=Cernusco%20Lombardone%20Comune%20LC&output=embed"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             style="border:0; width:100%; height:100%; min-height:300px; border-radius:20px; filter:saturate(0.9) contrast(1.08);"
@@ -97,6 +103,7 @@
           ></iframe>
         </div>
       </section>
+
     </main>
     <dialog id="request-summary" class="request-summary" aria-labelledby="request-summary-title">
       <div class="request-summary-content">
@@ -139,7 +146,7 @@
       <p id="cookie-description">Usiamo strumenti tecnici per far funzionare wishlist e sito. Alcuni servizi esterni, come Google Maps, possono usare propri cookie. <a href="cookie-policy.html">Leggi la Cookie Policy</a>.</p>
       <div class="cookie-actions"><button class="cookie-accept" type="button" data-cookie-accept>Accetta</button><button class="cookie-reject" type="button" data-cookie-reject>Rifiuta</button></div>
     </aside>
-    <script src="script.js"></script>
+    <script src="script.js?v=20261115-3"></script>
     <script src="cookies.js"></script>
   </body>
 </html>

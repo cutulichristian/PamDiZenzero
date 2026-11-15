@@ -1,3 +1,13 @@
+const scrollBanner = document.getElementById('scroll-banner');
+if (scrollBanner) {
+  const updateScrollBanner = () => {
+    scrollBanner.classList.toggle('hidden', window.scrollY > 60);
+  };
+
+  updateScrollBanner();
+  window.addEventListener('scroll', updateScrollBanner, { passive: true });
+}
+
 const products = [
   { id: 'diamontPaintingBabboAppeso', name: 'Diamont Painting "Babbo Natale"', kind: 'Decorazione da appendere', price: '€ 11,00', amount: 11, image: 'assets/babboappeso.jpg' },
   { id: 'diamontPaintingBabboBase', name: 'Diamont Painting "Babbo Natale"', kind: 'Decorazione con base', price: '€ 13,00', amount: 13, image: 'assets/babbobase.jpg' },
@@ -99,6 +109,11 @@ const products = [
   { id: 'cornice1', name: 'Cornice Diamont Painting', kind: 'Decorazioni natalizie', price: '€ 14,00', amount: 14, image: 'assets/cornice1.JPG' },
   { id: 'cornice2', name: 'Cornice Diamont Painting', kind: 'Decorazioni natalizie', price: '€ 14,00', amount: 14, image: 'assets/cornice2.JPG' },
   { id: 'cornice3', name: 'Cornice Diamont Painting', kind: 'Decorazioni natalizie', price: '€ 14,00', amount: 14, image: 'assets/cornice3.JPG' },
+  { id: 'babbettoverde', name: 'Diamont Painting di Natale', kind: 'Quadro decorativo', price: '€ 11,00', amount: 11, image: 'assets/babbettoverde.JPG' },
+  { id: 'babbobasealbero', name: 'Diamont Painting Babbo Natale', kind: 'Decorazione con base', price: '€ 13,00', amount: 13, image: 'assets/babbobasealbero.JPG' },
+  { id: 'babbocasettina', name: 'Diamont Painting Babbo Natale', kind: 'Decorazione da appendere', price: '€ 11,00', amount: 11, image: 'assets/babbocasettina.JPG' },
+  { id: 'elfettomusica', name: 'Diamont Painting Babbo Natale', kind: 'Decorazione con base', price: '€ 13,00', amount: 13, image: 'assets/elfettomusica.JPG' },
+  { id: 'pupazzocolorato', name: 'Diamont Painting Pupazzo di Natale', kind: 'Decorazione da appendere', price: '€ 11,00', amount: 11, image: 'assets/pupazzocolorato.JPG' },
 
 ];
 
@@ -349,6 +364,35 @@ function changeWishlistQuantity(productId, change) {
   drawWishlist();
 }
 
+function playWishlistStars(anchor) {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const bounds = anchor.getBoundingClientRect();
+  const burst = document.createElement('span');
+  burst.className = 'wishlist-star-burst';
+  burst.setAttribute('aria-hidden', 'true');
+  burst.style.left = `${bounds.left + bounds.width / 2}px`;
+  burst.style.top = `${bounds.top + bounds.height / 2}px`;
+
+  [{ x: -30, y: -42 }, { x: -14, y: -58 }, { x: 7, y: -52 }, { x: 27, y: -43 }, { x: 39, y: -27 }, { x: -39, y: -23 }].forEach((offset, index) => {
+    const star = document.createElement('span');
+    star.className = 'wishlist-star';
+    star.style.setProperty('--star-x', `${offset.x}px`);
+    star.style.setProperty('--star-y', `${offset.y}px`);
+    star.style.animationDelay = `${index * 45}ms`;
+    burst.append(star);
+  });
+
+  document.body.append(burst);
+  window.setTimeout(() => burst.remove(), 1450);
+}
+
+function playWishlistStarsFromAddition(anchor, productId) {
+  if (!productMap.has(productId)) return;
+  const maxQuantity = multiQuantityProductIds.has(productId) ? multiQuantityLimit : 1;
+  if (getWishlistQuantity(productId) < maxQuantity) playWishlistStars(anchor);
+}
+
 function toggleColorVariant(color) {
   if (!colorVariants.some((variant) => variant.id === color)) return;
 
@@ -423,6 +467,14 @@ const soldOutProductIds = new Set([
   'lanternafeltro',
   'carillongiostra',
   'diamondrenna',
+  'cornice2',
+  'mulino',
+  'cornicerossaeverde',
+  'cornicebiancababborosso',
+  'cornicerossababbo',
+  'carilloncasetta',
+  'carillongiostra',
+  'diamontappoggioalbero'
 ]);
 
 function isSoldOut(productId) {
@@ -622,6 +674,9 @@ productGrids.forEach((productGrid) => {
     const removeButton = e.target.closest('.remove-from-wishlist');
 
     if (colorToggle) {
+      if (!wishlist.some((item) => item.id === colorVariantProductId && item.color === colorToggle.dataset.colorToggle)) {
+        playWishlistStars(colorToggle);
+      }
       toggleColorVariant(colorToggle.dataset.colorToggle);
       return;
     }
@@ -640,6 +695,7 @@ productGrids.forEach((productGrid) => {
     if (addButton) {
       const id = addButton.dataset.id ?? addButton.dataset.increase;
       if (!id) return;
+      if (id !== colorVariantProductId) playWishlistStarsFromAddition(addButton, id);
       changeWishlistQuantity(id, 1);
       return;
     }
@@ -794,7 +850,10 @@ if (wishlistList) {
 
     if (colorRemoveButton) toggleColorVariant(colorRemoveButton.dataset.colorRemove);
     else if (removeButton) removeFromWishlist(removeButton.dataset.remove);
-    else if (increaseButton) changeWishlistQuantity(increaseButton.dataset.increase, 1);
+    else if (increaseButton) {
+      playWishlistStarsFromAddition(increaseButton, increaseButton.dataset.increase);
+      changeWishlistQuantity(increaseButton.dataset.increase, 1);
+    }
     else if (decreaseButton) changeWishlistQuantity(decreaseButton.dataset.decrease, -1);
   });
 }
