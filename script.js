@@ -468,7 +468,7 @@ const soldOutProductIds = new Set([
   'carillongiostra',
   'diamondrenna',
   'cornice2',
-  'mulino',
+  'diamontPaintingMulino',
   'cornicerossaeverde',
   'cornicebiancababborosso',
   'cornicerossababbo',
