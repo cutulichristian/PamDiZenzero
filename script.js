@@ -474,7 +474,8 @@ const soldOutProductIds = new Set([
   'cornicerossababbo',
   'carilloncasetta',
   'carillongiostra',
-  'diamontappoggioalbero'
+  'diamontappoggioalbero',
+  'diamondpandispagna'
 ]);
 
 function isSoldOut(productId) {
