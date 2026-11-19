@@ -452,7 +452,7 @@ const soldOutProductIds = new Set([
   'cornicelfetto',
   'cornicetopinidiamond',
   'paesaggiolegno',
-  'alberoazzurro',
+  'alberotiffany',
   'bigliettoRenna',
   'bigliettocampana',
   'bigliettopallina',
@@ -480,6 +480,9 @@ const soldOutProductIds = new Set([
   'diamontappoggioalbero',
   'diamondpandispagna',
   'pupazzocolorato',
+  'paintingincorniciatoorso',
+  'babboarcoceppo',
+  'cornicescritta',
 ]);
 
 function isSoldOut(productId) {
