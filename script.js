@@ -114,6 +114,9 @@ const products = [
   { id: 'babbocasettina', name: 'Diamont Painting Babbo Natale', kind: 'Decorazione da appendere', price: '€ 11,00', amount: 11, image: 'assets/babbocasettina.JPG' },
   { id: 'elfettomusica', name: 'Diamont Painting Babbo Natale', kind: 'Decorazione con base', price: '€ 13,00', amount: 13, image: 'assets/elfettomusica.JPG' },
   { id: 'pupazzocolorato', name: 'Diamont Painting Pupazzo di Natale', kind: 'Decorazione da appendere', price: '€ 11,00', amount: 11, image: 'assets/pupazzocolorato.JPG' },
+  { id: 'alberoauguri', name: 'Albero soffice illuminato', kind: 'Decorazioni natalizie', price: '€ 10,00', amount: 10, image: 'assets/alberoauguri.JPG' },
+  { id: 'alberorenna', name: 'Albero soffice illuminato', kind: 'Decorazioni natalizie', price: '€ 10,00', amount: 10, image: 'assets/alberorenna.JPG' },
+  { id: 'follettaceppo', name: 'Fatina del natale (M)', kind: 'Decorazioni natalizie', price: '€ 30,00', amount: 30, image: 'assets/follettaceppo.JPG' },
 
 ];
 
@@ -475,7 +478,8 @@ const soldOutProductIds = new Set([
   'carilloncasetta',
   'carillongiostra',
   'diamontappoggioalbero',
-  'diamondpandispagna'
+  'diamondpandispagna',
+  'pupazzocolorato',
 ]);
 
 function isSoldOut(productId) {
