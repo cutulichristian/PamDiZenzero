@@ -126,6 +126,12 @@ const products = [
   { id: 'elfettogiu', name: 'Elfetto di Natale', kind: 'Decorazioni natalizie', price: '€ 15,00', amount: 15, image: 'assets/elfettogiu.jpg' },
   { id: 'sofficeazzurro', name: 'Albero soffice illuminato', kind: 'Decorazioni natalizie', price: '€ 10,00', amount: 10, image: 'assets/sofficeazzurro.jpg' },
   { id: 'ledrennina', name: 'Diamond Painting Renna', kind: 'Decorazione con base led', price: '€ 15,00', amount: 15, image: 'assets/ledrennina.jpg' },
+  { id: 'treninoluntan', name: 'Trenino di Natale', kind: 'Decorazioni natalizie', price: '€ 15,00', amount: 15, image: 'assets/treninoluntan.JPG' },
+  { id: 'cornicepanna', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicepanna.JPG' },
+  { id: 'cornicettagrinch', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicettagrinch.JPG' },
+  { id: 'ceppolungo', name: 'Elfetti di Natale', kind: 'Decorazioni natalizie', price: '€ 15,00', amount: 15, image: 'assets/ceppolungo.JPG' },
+  { id: 'black', name: 'Cornice Diamont Painting di Natale', kind: 'Decorazioe natalizia', price: '€ 14,00', amount: 14, image: 'assets/black.JPG' },
+  { id: 'casafumo', name: 'Casetta', kind: 'Decorazione natalizia', price: '€ 50,00', amount: 50, image: 'assets/casafumo.JPG'},
 
 ];
 
@@ -289,7 +295,7 @@ for (const category of categories) {
     }
   }
 }
-const featuredProductIds = ['casetta','villaggionelegno','lanterninacoto','carillongiostra','carillon', 'carilloncasetta'];
+const featuredProductIds = ['casafumo','elfettogiu','casetta','villaggionelegno',,'carillongiostra','carillon'];
 const featuredProducts = [...new Set(featuredProductIds)]
   .slice(0, 6)
   .map((id) => productMap.get(id))
@@ -492,6 +498,8 @@ const soldOutProductIds = new Set([
   'paintingincorniciatoorso',
   'babboarcoceppo',
   'cornicescritta',
+  'lanterninaarchetta',
+  'lanterninacoto'
 ]);
 
 function isSoldOut(productId) {
