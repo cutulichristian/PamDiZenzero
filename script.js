@@ -117,6 +117,15 @@ const products = [
   { id: 'alberoauguri', name: 'Albero soffice illuminato', kind: 'Decorazioni natalizie', price: '€ 10,00', amount: 10, image: 'assets/alberoauguri.JPG' },
   { id: 'alberorenna', name: 'Albero soffice illuminato', kind: 'Decorazioni natalizie', price: '€ 10,00', amount: 10, image: 'assets/alberorenna.JPG' },
   { id: 'follettaceppo', name: 'Fatina del natale (M)', kind: 'Decorazioni natalizie', price: '€ 30,00', amount: 30, image: 'assets/follettaceppo.JPG' },
+  { id: 'biglietto3dd', name: 'Biglietto Diamond Painting 3D', kind: 'Biglietti da regalare', price: '€ 4,50', amount: 4.5, image: 'assets/biglietto3dd.jpg' },
+  { id: 'biglietto3ddd', name: 'Biglietto Diamond Painting 3D', kind: 'Biglietti da regalare', price: '€ 4,50', amount: 4.5, image: 'assets/biglietto3ddd.jpg' },
+  { id: 'cornicedoratababbobianco', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/cornicedoratababbobianco.jpg' },
+  { id: 'corniceverdeboscaiolo', name: 'Cornice Natalizia', kind: 'Decorazioni natalizie', price: '€ 20,00', amount: 20, image: 'assets/corniceverdeboscaiolo.jpg' },
+  { id: 'dueelfetti', name: 'Elfetti di Natale', kind: 'Decorazioni natalizie', price: '€ 15,00', amount: 15, image: 'assets/dueelfetti.jpg' },
+  { id: 'dueelferri', name: 'Elfetti di Natale', kind: 'Decorazioni natalizie', price: '€ 15,00', amount: 15, image: 'assets/dueelferri.jpg' },
+  { id: 'elfettogiu', name: 'Elfetto di Natale', kind: 'Decorazioni natalizie', price: '€ 15,00', amount: 15, image: 'assets/elfettogiu.jpg' },
+  { id: 'sofficeazzurro', name: 'Albero soffice illuminato', kind: 'Decorazioni natalizie', price: '€ 10,00', amount: 10, image: 'assets/sofficeazzurro.jpg' },
+  { id: 'ledrennina', name: 'Diamond Painting Renna', kind: 'Decorazione con base led', price: '€ 15,00', amount: 15, image: 'assets/ledrennina.jpg' },
 
 ];
 
